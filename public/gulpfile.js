@@ -3,7 +3,7 @@ const concat = require("gulp-concat");
 const babel = require("gulp-babel");
 const sass = require("gulp-sass");
 gulp.task("js", function() {
-    gulp.src(["./js/app.js", "./js/*.js"]) //can drop in an array of files or use a wildcard
+    gulp.src(["./js/app.js", "./js/services/*.js", "./js/directives/*.js"]) //can drop in an array of files or use a wildcard
         .pipe(concat("all.js"))
         // .pipe(babel({
         //     presets: ["es2015"]

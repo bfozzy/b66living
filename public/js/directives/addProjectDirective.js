@@ -2,7 +2,7 @@ angular.module("b66Living")
   .directive("addProjectDirective", function(){
       return {
 
-        templateUrl: "js/directives/addProject.html",
+        templateUrl: "templates/directiveTemplates/addProject.html",
         restrict: "AE",
         link: function(scope, element, attributes){
 

@@ -1,0 +1,12 @@
+<!-- {{projects}} -->
+<div ng-repeat="project in projects" class="">
+
+<button ng-model="project.id" type="button"  class="projectSummaries">
+{{project.name}}
+{{project.startdate}}
+{{project.deadline}}
+  <button ng-model="project.id" ng-click="deleteProject()" type="button" name="button" class="deleteProject">
+    Delete Project
+  </button>
+</button>
+</div>

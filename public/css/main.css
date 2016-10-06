@@ -4,3 +4,13 @@
   background-color: grey;
   margin: 5px;
 }
+.customerInfo{
+  width: 550px;
+  height: 150px;
+  background-color: lightgrey;
+}
+.address{
+  width: 550px;
+  height: 150px;
+  background-color: lightgrey;
+}

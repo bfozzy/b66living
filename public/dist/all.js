@@ -12,10 +12,17 @@ angular.module("b66Living", ["ui.router"])
       })
       .state("addProject", {
         templateUrl: "templates/routeTemplates/newProject.html",
-        url: "/admin/project/new"
+        url: "/admin/projects/new"
       })
-
-  })
+      .state("addCustomer", {
+        templateUrl: "templates/routeTemplates/addCustomerView.html",
+        url: "/admin/projects/:id/customer/new"
+      })
+      .state("seeProject", {
+        templateUrl: "templates/routeTemplates/projectDetail.html",
+        url: "/admin/projects/:id"
+      });
+  });
 
 angular.module("b66Living")
   .controller("testCtrl", function($scope, $state){
@@ -23,6 +30,41 @@ angular.module("b66Living")
       $state.go('projects')
     }
   })
+
+angular.module("b66Living")
+  .directive("addCustomer", function(){
+      return {
+
+        templateUrl: "./templates/directiveTemplates/addCustomer.html",
+
+        restrict: "AE",
+        link: function(scope, element, attributes){
+
+        },
+        controller: function($scope, mainService, $stateParams){
+
+          $scope.newCust = function(customerName, customerEmail, customerPhone, customerAddressLine1, customerAddressLine2, customerAddressCity, customerAddressState, customerAddressZip){
+            var customer = {
+              customerData: {
+                name: customerName,
+                email: customerEmail,
+                phone: customerPhone
+              },
+              custAddress: {
+                addressLine1: customerAddressLine1,
+                addressLine2: customerAddressLine2,
+                addressCity: customerAddressCity,
+                addressState: customerAddressState,
+                addressZip: customerAddressZip
+              }
+            };
+            console.log($stateParams.id);
+            //still need to call the function in the service dropping in the customer object and the id variable.
+          };
+
+        }
+      };
+    });
 
 angular.module("b66Living")
   .directive("addProjectDirective", function(){
@@ -36,12 +78,12 @@ angular.module("b66Living")
         },
         controller: function($scope, mainService){
           //controller is working
-          $scope.newproj = function(name, startDate, deadline){
+          $scope.newproj = function(projectName, ProjectStartDate, ProjectDeadline){
             //projData will turn the form in to an object that can be passed to the service
             var projData = {
-              name: name,
-              startDate: startDate,
-              deadline: deadline
+              projectName: projectName,
+              ProjectStartDate: ProjectStartDate,
+              ProjectDeadline: ProjectDeadline
             };
             mainService.createProj(projData).then(function(res){
               console.log(res);
@@ -59,6 +101,25 @@ angular.module("b66Living")
     })
 
 angular.module("b66Living")
+  .directive("project", function(){
+      return {
+
+        templateUrl: "./templates/directiveTemplates/project.html",
+
+        restrict: "AE",
+        link: function(scope, element, attributes){
+
+        },
+        controller: function($scope, mainService, $stateParams){
+          $scope.getProject = mainService.getProject($stateParams.id).then(function(res){
+            console.log(res.data);
+            $scope.project = res.data;
+          });
+        }
+      };
+    });
+
+angular.module("b66Living")
   .directive("projectSummaries", function(){
       return {
 
@@ -69,25 +130,40 @@ angular.module("b66Living")
 
         },
         controller: function($scope, mainService){
+
           $scope.getProjects = function(){
             mainService.showProjects()
             .then(function(res){
               console.log(res.data);
               $scope.projects = res.data;
-            })
-          }()
+            });
+          }(),
+          $scope.goToProject = function(projectId){
+            // ng-go or something like that
+            // $state.go("/admin/projects/" + projectId);
+            console.log(projectId);
+          },
+          $scope.deleteProject = function(projectId){
+            console.log(projectId);
+          }
         }
       };
-    })
+    });
 
 angular.module("b66Living")
   .service("mainService", function($http){
     this.serviceTest = "Service Is Working!";
 
     this.createProj = function(data){
-      return $http.post("admin/project/new", data)
-    }
+      return $http.post("admin/project/new", data);
+    };
+    this.createCust = function(customer, id){
+      return $http.post("admin/project/" + id + "customer/new", customer);
+    };
     this.showProjects = function(){
-    return $http.get("admin/projects")
+    return $http.get("admin/projects");
+  };
+    this.getProject = function(id){
+      return $http.get("admin/project/"+id);
     }
-  })
+  });

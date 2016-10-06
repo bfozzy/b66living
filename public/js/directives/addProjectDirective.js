@@ -10,12 +10,12 @@ angular.module("b66Living")
         },
         controller: function($scope, mainService){
           //controller is working
-          $scope.newproj = function(name, startDate, deadline){
+          $scope.newproj = function(projectName, ProjectStartDate, ProjectDeadline){
             //projData will turn the form in to an object that can be passed to the service
             var projData = {
-              name: name,
-              startDate: startDate,
-              deadline: deadline
+              projectName: projectName,
+              ProjectStartDate: ProjectStartDate,
+              ProjectDeadline: ProjectDeadline
             };
             mainService.createProj(projData).then(function(res){
               console.log(res);

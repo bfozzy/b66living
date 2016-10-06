@@ -12,7 +12,14 @@ angular.module("b66Living", ["ui.router"])
       })
       .state("addProject", {
         templateUrl: "templates/routeTemplates/newProject.html",
-        url: "/admin/project/new"
+        url: "/admin/projects/new"
       })
-
-  })
+      .state("addCustomer", {
+        templateUrl: "templates/routeTemplates/addCustomerView.html",
+        url: "/admin/projects/:id/customer/new"
+      })
+      .state("seeProject", {
+        templateUrl: "templates/routeTemplates/projectDetail.html",
+        url: "/admin/projects/:id"
+      });
+  });

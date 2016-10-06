@@ -1,0 +1,17 @@
+<div class="customerInfo">
+    <h1>Customer Info</h1>
+    <h2>Name</h2><input type="text" ng-model="customerName" name="name" value="Customer Name"> <br>
+    <h2>Email</h2><input type="text" ng-model="customerEmail" name="CustomerEmail" value=""> <br>
+    <h2>Phone #</h2><input type="text" ng-model="customerPhone" name="CustomerPhone" value=""> <br>
+</div>
+
+<h1>Customer Address</h1>
+
+<div class="address">
+  <h2>Line 1</h2><input type="text" ng-model="customerAddressLine1" name="CustomerAddressLine1" value="Line 1"> <br>
+  <h2>Line 2</h2><input type="text" ng-model="customerAddressLine2" name="CustomerAddressLine2" value="Line 2"> <br>
+  <h2>City</h2><input type="text" ng-model="customerAddressCity" name="CustomerAddressCity" value="City"> <br>
+  <h2>State</h2><input type="text" ng-model="customerAddressState" name="CustomerAddressState" value="State"> <br>
+  <h2>Zip</h2><input type="text" ng-model="customerAddressZip" name="CustomerAddressZip" value="Zip Code"> <br>
+  <button ng-click="newCust(customerName, customerEmail, customerPhone, customerAddressLine1, customerAddressLine2, customerAddressCity, customerAddressState, customerAddressZip)"type="button" name="saveCustomer">Save Customer</button>
+</div>

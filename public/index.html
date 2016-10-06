@@ -8,13 +8,18 @@
     <title>B66Living</title>
   </head>
   <body>
-<ui-view></ui-view>
 <ul>
   <li><a ui-sref="home">home</a></li>
   <li><a ui-sref="projects">projects</a></li>
   <li><a ui-sref="addProject">new project</a></li>
+  <!-- <li><a ui-sref="seeProject({id: projects.id})">projects</a></li> -->
+  <li><a ui-sref="addCustomer">new customer</a></li>
+
+
+
 
 </ul>
+<ui-view></ui-view>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>

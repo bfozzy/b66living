@@ -1,12 +1,14 @@
 <!-- {{projects}} -->
 <div ng-repeat="project in projects" class="">
-
-<button ng-click="goToProject(project.id)" type="button"  class="projectSummaries">
+<a ui-sref="seeProject({id: project.id})">
+<button ng-click="_goToProject(project.id)"
+type="button"  class="projectSummaries">
 {{project.name}}
 {{project.startdate}}
 {{project.deadline}}
-  <button ng-click="deleteProject()" type="button" name="button" class="deleteProject">
-    Delete Project
-  </button>
 </button>
+</a>
 </div>
+<!-- <button ng-click="deleteProject()" type="button" name="button" class="deleteProject">
+  Delete Project
+</button> -->

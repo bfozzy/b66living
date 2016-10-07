@@ -8,7 +8,7 @@ angular.module("b66Living")
         link: function(scope, element, attributes){
 
         },
-        controller: function($scope, mainService){
+        controller: function($scope, mainService, $state){
 
           $scope.getProjects = function(){
             mainService.showProjects()
@@ -19,7 +19,7 @@ angular.module("b66Living")
           }(),
           $scope.goToProject = function(projectId){
             // ng-go or something like that
-            // $state.go("/admin/projects/" + projectId);
+            $state.go("/admin/projects/" + projectId);
             console.log(projectId);
           },
           $scope.deleteProject = function(projectId){

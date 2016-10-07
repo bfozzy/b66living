@@ -35,14 +35,23 @@ module.exports = {
   },
   getProject: function(req,res) {
     db.get_project([req.params.id], function(err, project){
-      // if(err){
-      //   res.status(400).json(err);
-      // }
-      // else{
-      //   res.status(200).json(project);
-      // }
-      console.log(project);
+      if(err){
+        res.status(400).json(err);
+      }
+      else{
+        res.status(200).json(project);
+      }
+      // db.get_customer([req.params.id], function(err, customer){
+      //   if(err){
+      //     res.status(400).json(err);
+      //   }
+      //   else{
+      //     res.status(200).json(customer);
+      //   }
+      // })
+      // console.log(project);
     });
+    // console.log(req.params.id); req.params.id is logging correctly
   }
 
 

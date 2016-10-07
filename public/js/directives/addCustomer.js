@@ -26,7 +26,7 @@ angular.module("b66Living")
               }
             };
             console.log($stateParams.id);
-            //still need to call the function in the service dropping in the customer object and the id variable.
+            mainService.createCust(customer, $stateParams.id);
           };
 
         }

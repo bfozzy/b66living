@@ -17,6 +17,9 @@ angular.module("b66Living")
             console.log(res.data);
             $scope.invoices = res.data;
           });
+          $scope.getCustomers = mainService.getCustomers($stateParams.id).then(function(res){
+            $scope.customers = res.data;
+          })
 
         }
       };

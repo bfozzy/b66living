@@ -115,6 +115,11 @@ angular.module("b66Living")
             console.log(res.data);
             $scope.project = res.data;
           });
+          $scope.getInvoices = mainService.getInvoices($stateParams.id).then(function(res){
+            console.log(res.data);
+            $scope.invoices = res.data;
+          });
+
         }
       };
     });
@@ -138,13 +143,9 @@ angular.module("b66Living")
               $scope.projects = res.data;
             });
           }(),
-          $scope.goToProject = function(projectId){
-            // ng-go or something like that
-            $state.go("/admin/projects/" + projectId);
-            console.log(projectId);
-          },
+
           $scope.deleteProject = function(projectId){
-            console.log(projectId);
+            console.log(projectId);//this should go in the project directive
           }
         }
       };
@@ -165,5 +166,8 @@ angular.module("b66Living")
   };
     this.getProject = function(id){
       return $http.get("admin/project/"+id);
+    }
+    this.getInvoices = function(id){
+      return $http.get("admin/project/"+id+"/invoices")
     }
   });

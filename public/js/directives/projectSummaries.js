@@ -17,13 +17,9 @@ angular.module("b66Living")
               $scope.projects = res.data;
             });
           }(),
-          $scope.goToProject = function(projectId){
-            // ng-go or something like that
-            $state.go("/admin/projects/" + projectId);
-            console.log(projectId);
-          },
+
           $scope.deleteProject = function(projectId){
-            console.log(projectId);
+            console.log(projectId);//this should go in the project directive
           }
         }
       };

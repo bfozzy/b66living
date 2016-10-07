@@ -19,6 +19,7 @@ app.post("/admin/customer/new", projectCtrl.createNewCustomer);
 
 app.get("/admin/projects", projectCtrl.getProjects);
 app.get("/admin/project/:id", projectCtrl.getProject);
+app.get("/admin/project/:id/invoices", projectCtrl.getInvoices);
 
 var port = 8001;
 

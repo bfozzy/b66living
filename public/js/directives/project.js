@@ -13,6 +13,11 @@ angular.module("b66Living")
             console.log(res.data);
             $scope.project = res.data;
           });
+          $scope.getInvoices = mainService.getInvoices($stateParams.id).then(function(res){
+            console.log(res.data);
+            $scope.invoices = res.data;
+          });
+
         }
       };
     });

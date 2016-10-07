@@ -52,8 +52,18 @@ module.exports = {
       // console.log(project);
     });
     // console.log(req.params.id); req.params.id is logging correctly
-  }
+  },
+  getInvoices: function(req,res) {
+    db.get_invoices([req.params.id], function(err, invoices){
+      if(err){
+        res.status(400).json(err);
+      }
+      else{
+        res.status(200).json(invoices);
+      }
 
+    });
+  }
 
 
 

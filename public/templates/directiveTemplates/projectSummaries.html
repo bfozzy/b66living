@@ -1,8 +1,7 @@
 <!-- {{projects}} -->
-<div ng-repeat="project in projects" class="">
+<div ng-repeat="project in projects" class="projectSummaries">
 <a ui-sref="seeProject({id: project.id})">
-<button ng-click="_goToProject(project.id)"
-type="button"  class="projectSummaries">
+<button type="button"  class="projectSummaries">
 {{project.name}}
 {{project.startdate}}
 {{project.deadline}}

@@ -11,15 +11,19 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static("../public"));
 
+//Controllers!
 var projectCtrl = require("./nodeControllers/projectCtrl.js");
-//
-// app.get("/api/animals", animalCtrl.getAllAnimals)
-app.post("/admin/project/new", projectCtrl.createNewProject);
-app.post("/admin/customer/new", projectCtrl.createNewCustomer);
 
+// POST Endpoints!
+app.post("/admin/project/new", projectCtrl.createNewProject);
+app.post("/admin/project/:id/customer/new", projectCtrl.createNewCustomer);
+app.post("/admin/project/:id/invoice/new", projectCtrl.createNewInvoice);
+//GET Endpoints!
 app.get("/admin/projects", projectCtrl.getProjects);
 app.get("/admin/project/:id", projectCtrl.getProject);
 app.get("/admin/project/:id/invoices", projectCtrl.getInvoices);
+app.get("/admin/project/:id/customers", projectCtrl.getCustomers);
+
 
 var port = 8001;
 

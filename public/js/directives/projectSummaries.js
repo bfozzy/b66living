@@ -13,7 +13,7 @@ angular.module("b66Living")
           $scope.getProjects = function(){
             mainService.showProjects()
             .then(function(res){
-              console.log(res.data);
+              // console.log(res.data);
               $scope.projects = res.data;
             });
           }(),

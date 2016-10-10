@@ -1,17 +1,43 @@
-<div ng-repeat="project in project">
-{{project.project_name}} <br>
-{{project.project_deadline}} <br>
-{{project.project_startdate}} <br>
-{{project.customer_name}} <br>
-{{project.customer_email}} <br>
-{{project.customer_phone}} <br>
+<nav-bar> </nav-bar>
+
+<div class="container" ng-repeat="project in project">
+  <!-- <div>{{project.project_deadline}}</div> -->
+  <!-- <div>{{project.project_startdate}}</div> -->
+  <ul class="collection with-header">
+    <li class="collection-header"><h4>Customer Information</h4></li>
+    <li class="collection-item"><div>{{project.customer_name}}</div></li>
+    <li class="collection-item"><div>{{project.customer_email}}</div></li>
+    <li class="collection-item"><div>{{project.customer_phone}}</div></li>
+  </ul>
 </div>
-<div ng-repeat="invoice in invoices">
-  {{invoice.invoice_id}} <br>
-  {{invoice.invoice_description}} <br>
-  {{invoice.invoice_period}} <br>
-  {{invoice.invoice_subtotal}} <br>
+
+
+
+
+<div >
+  <ul class="collection with-header">
+    <li class="collection-header"><h4>Invoices</h4></li>
+    <div class="" ng-repeat="invoice in invoices">
+      <li class="collection-item"><div>{{invoice.invoice_id}}</div></li>
+      <li class="collection-item"><div>{{invoice.invoice_description}}</div> </li>
+      <li class="collection-item"><div>{{invoice.invoice_period}}</div></li>
+      <li class="collection-item"><div>{{invoice.invoice_subtotal}}</div></li>
+    </div>
+
+  </ul>
 </div>
-<div class="">
-  <add-customer ng-model="project.id"></add-customer>
+
+<!-- <div ng-repeat="customer in customers">
+  {{customer.id}}
+  {{customer.id}}
+  {{customer.id}}
+</div> -->
+<div class="addFields">
+  <div class="addCustomer">
+    <add-customer></add-customer>
+  </div>
+
+  <div class="addInvoice">
+    <add-invoice></add-invoice>
+  </div>
 </div>

@@ -18,7 +18,6 @@ angular.module("b66Living")
               ProjectDeadline: ProjectDeadline
             };
             mainService.createProj(projData).then(function(res){
-              console.log(res);
               if(res.status === 200){
                 alert("Project Added")
               }

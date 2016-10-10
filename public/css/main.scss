@@ -1,0 +1,101 @@
+/*dark background color #2F383D*/
+/*light background color #9E9E9E*/
+@import 'https://fonts.googleapis.com/css?family=Courgette|Oxygen';
+// @import 'https://fonts.googleapis.com/css?family=Courgette';
+
+
+// VARIABLES!!!
+$darkColor: #2F383D;
+$lightColor: #9E9E9E;
+$mainAccentColor: #A6F284;
+$importantAccentColor: #FF0000;
+$smallBackgroundImage: url("../images/small.jpg");
+// $mediumBackgroundImage: "";
+// $largeBackgroundImage: "";
+$logoFont1: 'Oxygen', sans-serif;
+$logoFont2: 'Courgette', cursive;
+
+body{
+   background: $smallBackgroundImage;
+}
+
+//NAVIGATION!!!
+.main-header{
+  background-color: $darkColor;
+  height: 120px;
+  width: 100%;
+}
+.b66{
+  font-family: $logoFont1;
+  font-size: 30px;
+  color: $darkColor;
+}
+.living{
+  font-family: $logoFont2;
+  font-size: 30px;
+  color: $darkColor;
+
+}
+.companyLogo{
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: $mainAccentColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.navProjectName{
+width: 50%;
+margin-right: 40px;
+margin-top: 29px;
+}
+
+
+//MAIN CONTENT!!!!
+.collection{
+  background-color: $lightColor;
+}
+.content-wrapper{
+  // background-image: "https://hd.unsplash.com/photo-1427477321886-abc24e8ce923";
+  // background: #ccc;
+}
+
+
+
+
+.save-button{
+
+}
+
+.projectSummaries{
+  width: 100px;
+  height: 100px;
+  background-color: $lightColor;
+  margin: 5px;
+}
+.customerInfo{
+  width: 550px;
+  height: 150px;
+  background-color: $lightColor;
+}
+.address{
+  width: 550px;
+  height: 150px;
+  background-color: $lightColor;
+}
+.addfields{
+  display: inline-block;
+  /*justify-content: space-around;*/
+}
+.addInvoice{
+  width: 200px;
+  height: 200px;
+}
+.addCustomer{
+  width: 200px;
+  height: 200px;
+}

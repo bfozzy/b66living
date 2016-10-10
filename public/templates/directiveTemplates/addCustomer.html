@@ -1,10 +1,11 @@
-<div class="customerInfo">
-    <h1>Customer Info</h1>
-    <h2>Name</h2><input type="text" ng-model="customerName" name="name" value="Customer Name"> <br>
-    <h2>Email</h2><input type="text" ng-model="customerEmail" name="CustomerEmail" value=""> <br>
-    <h2>Phone #</h2><input type="text" ng-model="customerPhone" name="CustomerPhone" value=""> <br>
+<div class="customerInfo input-field">
+    <p>Add Customer</p>
+    <p>Name</p><input type="text" ng-model="customerName" name="name" value="Customer Name">
+    <p>Email</p><input type="text" ng-model="customerEmail" name="CustomerEmail" value="">
+    <p>Phone #</p><input type="text" ng-model="customerPhone" name="CustomerPhone" value=""> 
+    <a class="btn-floating btn-large waves-effect waves-light red"><i ng-click="newCust(customerName, customerEmail, customerPhone, customerAddressLine1, customerAddressLine2, customerAddressCity, customerAddressState, customerAddressZip)" class="material-icons">save</i></a>
 </div>
-
+<!--
 <h1>Customer Address</h1>
 
 <div class="address">
@@ -13,5 +14,5 @@
   <h2>City</h2><input type="text" ng-model="customerAddressCity" name="CustomerAddressCity" value="City"> <br>
   <h2>State</h2><input type="text" ng-model="customerAddressState" name="CustomerAddressState" value="State"> <br>
   <h2>Zip</h2><input type="text" ng-model="customerAddressZip" name="CustomerAddressZip" value="Zip Code"> <br>
-  <button ng-click="newCust(customerName, customerEmail, customerPhone, customerAddressLine1, customerAddressLine2, customerAddressCity, customerAddressState, customerAddressZip)"type="button" name="saveCustomer">Save Customer</button>
-</div>
+
+</div> -->

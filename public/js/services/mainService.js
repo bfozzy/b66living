@@ -9,7 +9,7 @@ angular.module("b66Living")
     };
     this.createInvoice = function(invoice, id){
       return $http.post("admin/project/"+id+"/invoice/new", invoice);
-    }
+    };
     //GET Endpoints!
     this.showProjects = function(){
       return $http.get("admin/projects");

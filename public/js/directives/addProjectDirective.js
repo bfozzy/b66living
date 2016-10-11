@@ -19,14 +19,14 @@ angular.module("b66Living")
             };
             mainService.createProj(projData).then(function(res){
               if(res.status === 200){
-                alert("Project Added")
+                alert("Project Added");
               }
               else { //this part isn't working. If the post fails it just gives an error in the console with the err status
-                alert("There was a problem processing your request")
+                alert("There was a problem processing your request");
               }
-            })
+            });
 
           };
         }
       };
-    })
+    });

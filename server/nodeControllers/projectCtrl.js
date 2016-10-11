@@ -14,15 +14,15 @@ module.exports = {
     });
   },
   createNewCustomer: function(req, res){
-    console.log(req.body)
+    // console.log(req.body)
     db.create_new_customer([req.body.name, req.body.email, req.body.phone, req.params.id], function(err){
       if(err){
-        res.status(400).json(err)
+        res.status(400).json(err);
       }
       else {
-        res.status(200).json("Customer Added")
+        res.status(200).json("Customer Added");
       }
-    })
+    });
 
   },
 createNewInvoice: function(req, res){
@@ -31,18 +31,20 @@ createNewInvoice: function(req, res){
       res.status(400).json(err);
     }
     else {
-      res.status(200).json("Customer Added");
+      res.status(200).json("Invoice Added");
     }
   });
 },
   //GET Functions
   getProjects: function(req, res){
     db.get_projects(function(err, projects){
+      console.log(projects);
       if(err){
         res.status(400).json(err);
       }
       else {
         res.status(200).json(projects);
+        console.log(projects);
       }
     });
   },

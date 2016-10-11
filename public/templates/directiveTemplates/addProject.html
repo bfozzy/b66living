@@ -1,6 +1,28 @@
-<input type="text" ng-model="projectName" name="name" value="Project Name">
-<input type="text" ng-model="projectStartDate" name="startDate" value="Start Date">
-<input type="text" ng-model="ProjectDeadline" name="deadline" value="Deadline">
-<button ng-click="newproj(projectName, projectStartDate, ProjectDeadline)"type="button" name="save">Save Project</button>
-<!-- template is working -->
-<!-- ng models are working -->
+<div class="add-project-wrapper">
+  <div class="add-project-box shadow-effect">
+
+    <div class="add-project-title center-align">
+      Project Details
+    </div>
+
+    <div class="add-project-form-wrapper row">
+      <form class="col 12">
+        <div class="input-field col s6">
+          <input ng-model="projectName" id="project_name" type="text">
+          <label for="project_name">Project Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input ng-model="projectStartDate" id="project_start" type="text">
+          <label class="text-black"for="project_start_date">Start Date</label>
+        </div>
+        <div class="input-field col s6">
+          <input  ng-model="projectDeadline" id="project_deadline" type="text">
+          <label for="project_deadline">Deadline</label>
+        </div>
+
+        <button ng-click="newproj(projectName, projectStartDate, ProjectDeadline)"type="button" name="save">Save Project</button>
+    </form>
+    </div>
+
+  </div>
+</div>

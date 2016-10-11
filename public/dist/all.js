@@ -2,6 +2,19 @@
 
 angular.module("b66Living", ["ui.router"]).config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
+  //Rule to avoid trailing '/' in url
+  $urlRouterProvider.rule(function ($injector, $location) {
+
+    var path = $location.path();
+    var hasTrailingSlash = path[path.length - 1] === '/';
+
+    if (hasTrailingSlash) {
+
+      //if last charcter is a slash, return the same url without the slash
+      var newPath = path.substr(0, path.length - 1);
+      return newPath;
+    }
+  });
   $stateProvider.state("home", {
     templateUrl: "templates/routeTemplates/home.html",
     url: "/"
@@ -125,22 +138,21 @@ angular.module("b66Living").directive("navBar", function () {
     templateUrl: "./templates/directiveTemplates/navBar.html",
 
     restrict: "AE",
-    link: function link(scope, element, attributes) {
-
-
-    },
+    link: function link(scope, element, attributes) {},
     controller: function controller($scope, mainService, $stateParams) {
-      $scope.changeNav = function(){
-        if ($stateParams.id) {
-          mainService.getProject($stateParams.id).then(function (res) {
-            // console.log(res.data[0].project_name);
+      $scope.projectState = $stateParams.id;
+
+      if ($scope.projectState) {
+        mainService.getProject($stateParams.id).then(function (res) {
+
+          //  console.log("if statement works");
           $scope.navProjectName = res.data[0].project_name;
-          });
-        }
-        else {
-         $scope.navProjectName = 'Project Button';
-        }
-      }();
+        });
+      } else {
+        $scope.navProjectName = 'Project Button';
+      }
+      // console.log(res.data[0].project_name);
+
     }
   };
 });
@@ -153,17 +165,20 @@ angular.module("b66Living").directive("project", function () {
     restrict: "AE",
     link: function link(scope, element, attributes) {},
     controller: function controller($scope, mainService, $stateParams) {
-      $scope.getProject = mainService.getProject($stateParams.id).then(function (res) {
+      // $scope.getProject =
+      mainService.getProject($stateParams.id).then(function (res) {
         // console.log(res.data);
         $scope.project = res.data;
       });
 
-      $scope.getInvoices = mainService.getInvoices($stateParams.id).then(function (res) {
+      // $scope.getInvoices =
+      mainService.getInvoices($stateParams.id).then(function (res) {
         // console.log(res.data);
         $scope.invoices = res.data;
       });
 
-      $scope.getCustomers = mainService.getCustomers($stateParams.id).then(function (res) {
+      // $scope.getCustomers =
+      mainService.getCustomers($stateParams.id).then(function (res) {
         $scope.customers = res.data;
       });
     }
@@ -179,14 +194,16 @@ angular.module("b66Living").directive("projectSummaries", function () {
     link: function link(scope, element, attributes) {},
     controller: function controller($scope, mainService, $state) {
 
-      $scope.getProjects = function () {
-        mainService.showProjects().then(function (res) {
-          // console.log(res.data);
-          $scope.projects = res.data;
-        });
-      }(), $scope.deleteProject = function (projectId) {
-        console.log(projectId); //this should go in the project directive
-      };
+      // $scope.getProjects = function(){
+      mainService.showProjects().then(function (res) {
+        console.log(res.data);
+        $scope.projects = res.data;
+      });
+      // };
+
+      // $scope.deleteProject = function(projectId){
+      //   console.log(projectId);//this should go in the project directive
+      // };
     }
   };
 });

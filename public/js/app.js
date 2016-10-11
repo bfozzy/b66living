@@ -1,6 +1,20 @@
 angular.module("b66Living", ["ui.router"])
   .config(function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise("/")
+    $urlRouterProvider.otherwise("/");
+    //Rule to avoid trailing '/' in url
+    $urlRouterProvider.rule(function($injector, $location) {
+
+    var path = $location.path();
+    var hasTrailingSlash = path[path.length-1] === '/';
+
+    if(hasTrailingSlash) {
+
+      //if last charcter is a slash, return the same url without the slash
+      var newPath = path.substr(0, path.length - 1);
+      return newPath;
+    }
+
+  });
     $stateProvider
     .state("home", {
       templateUrl: "templates/routeTemplates/home.html",
@@ -22,4 +36,5 @@ angular.module("b66Living", ["ui.router"])
         templateUrl: "templates/routeTemplates/projectDetail.html",
         url: "/admin/projects/:id"
       });
+
   });

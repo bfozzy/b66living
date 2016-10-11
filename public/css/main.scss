@@ -6,7 +6,7 @@
 
 // VARIABLES!!!
 $darkColor: #2F383D;
-$lightColor: #9E9E9E;
+$lightColor: #949394;
 $mainAccentColor: #A6F284;
 $importantAccentColor: #FF0000;
 $smallBackgroundImage: url("../images/small.jpg");
@@ -14,10 +14,20 @@ $smallBackgroundImage: url("../images/small.jpg");
 // $largeBackgroundImage: "";
 $logoFont1: 'Oxygen', sans-serif;
 $logoFont2: 'Courgette', cursive;
-
+//Universal Styles
 body{
    background: $smallBackgroundImage;
 }
+.shadow-effect{
+  box-shadow: -2px 2px 6px grey;
+}
+.input-field label{
+  color: black;
+}
+.input-field input[type=text]:focus + label {
+   color: $mainAccentColor;
+ }
+
 
 //NAVIGATION!!!
 .main-header{
@@ -54,10 +64,80 @@ margin-right: 40px;
 margin-top: 29px;
 }
 
-
-//MAIN CONTENT!!!!
-.collection{
+//Add Project!!!!
+.add-project-wrapper{
+  width: 100%;
+  height: 200px;
+  margin: 10px;
+}
+.add-project-box{
+  width: 90%;
+  height: 100%;
   background-color: $lightColor;
+  margin: 1%;
+}
+.add-project-title{
+
+}
+.add-project-form-wrapper{
+
+}
+
+//Project Summaries!!!!
+.project-button{
+  width: 100%;
+  height: 100px;
+  margin: 10px;
+}
+.view-button{
+  height: 60px;
+  width: 60px;
+  margin-right: 6px;
+  margin-top: 20px;
+}
+.project-box{
+  width: 90%;
+  height: 100%;
+  background-color: $lightColor;
+  margin: 1%;
+}
+.project-name{
+  font-size: 28px;
+  color: black;
+  position: relative;
+  top: 20px;
+  left: 5px;
+}
+.start-date{
+  color: $mainAccentColor;
+  font-size: 16px;
+  position: relative;
+  top: 30px;
+
+}
+.arrow{
+  width: 50px;
+  height: 50px;
+}
+.arrow-button{
+  height: 55px;
+  width: 55px;
+  border-radius: 55px;
+  background-color: $darkColor;
+  padding-top: 3px;
+  padding-left: 4px;
+}
+//Project View!!!
+.customerContainer{
+  background-color: $lightColor;
+  height: 175px;
+  padding: 10px;
+}
+hr{
+  color: $darkColor;
+}
+.editButton{
+  margin-right: 5px;
 }
 .content-wrapper{
   // background-image: "https://hd.unsplash.com/photo-1427477321886-abc24e8ce923";

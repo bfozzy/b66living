@@ -5,6 +5,7 @@ var massive = require("massive");
 var connectionString = "postgres://postgres:@localhost/b66living";
 var app = module.exports = express();
 var massiveInstance = massive.connectSync({connectionString : connectionString});
+var serverConfig = require("./server_config.js");
 
 app.set("db", massiveInstance);
 app.use(cors());
@@ -25,7 +26,7 @@ app.get("/admin/project/:id/invoices", projectCtrl.getInvoices);
 app.get("/admin/project/:id/customers", projectCtrl.getCustomers);
 
 
-var port = 8001;
+var port = serverConfig.serverPort;
 
 app.listen(port, function(){
   console.log("listening to 8001");

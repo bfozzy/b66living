@@ -10,17 +10,17 @@ angular.module("b66Living")
         },
         controller: function($scope, mainService, $state){
 
-          $scope.getProjects = function(){
+          // $scope.getProjects = function(){
             mainService.showProjects()
             .then(function(res){
-              // console.log(res.data);
+              console.log(res.data);
               $scope.projects = res.data;
             });
-          }(),
+          // };
 
-          $scope.deleteProject = function(projectId){
-            console.log(projectId);//this should go in the project directive
-          }
+          // $scope.deleteProject = function(projectId){
+          //   console.log(projectId);//this should go in the project directive
+          // };
         }
       };
     });

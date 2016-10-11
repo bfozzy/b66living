@@ -1,20 +1,7 @@
 <nav-bar> </nav-bar>
 
-<div class="container" ng-repeat="project in project">
-  <!-- <div>{{project.project_deadline}}</div> -->
-  <!-- <div>{{project.project_startdate}}</div> -->
-  <ul class="collection with-header">
-    <li class="collection-header"><h4>Customer Information</h4></li>
-    <li class="collection-item"><div>{{project.customer_name}}</div></li>
-    <li class="collection-item"><div>{{project.customer_email}}</div></li>
-    <li class="collection-item"><div>{{project.customer_phone}}</div></li>
-  </ul>
-</div>
 
-
-
-
-<div >
+<!-- <div >
   <ul class="collection with-header">
     <li class="collection-header"><h4>Invoices</h4></li>
     <div class="" ng-repeat="invoice in invoices">
@@ -25,19 +12,45 @@
     </div>
 
   </ul>
+</div> -->
+<div class="customerContainer container"ng-repeat="project in project">
+  <div class="row">
+
+  <div class="containerTitle center-align col s12">
+    <h5>Customer Information</h5>
+  </div>
+  <div class="containerInfo col s12">
+    {{project.customer_name}}
+    <i class="small material-icons left">perm_identity</i>
+  </div>
+  <hr>
+  <div class="containerInfo col s12">
+    {{project.customer_email}}
+    <i class="small material-icons left">email</i>
+  </div>
+  <hr>
+
+  <div class="containerInfo col s6">
+    {{project.customer_phone}}
+    <i class="small material-icons left">phone</i>
+  </div>
+
+  <div class="editButton">
+    <a class="waves-effect waves-light btn right"><i class="material-icons right">cloud</i>Edit</a>
+
+  </div>
 </div>
 
-<!-- <div ng-repeat="customer in customers">
-  {{customer.id}}
-  {{customer.id}}
-  {{customer.id}}
-</div> -->
-<div class="addFields">
+</div>
+
+
+
+<!-- <div class="addFields">
   <div class="addCustomer">
     <add-customer></add-customer>
-  </div>
+  </div> -->
 
-  <div class="addInvoice">
+  <!-- <div class="addInvoice">
     <add-invoice></add-invoice>
   </div>
-</div>
+</div> -->

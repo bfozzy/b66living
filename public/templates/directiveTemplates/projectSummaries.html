@@ -1,5 +1,5 @@
 <!-- {{projects}} -->
-<div ng-repeat="project in projects" class="projectSummaries">
+<!-- <div ng-repeat="project in projects" class="projectSummaries">
 <a ui-sref="seeProject({id: project.id})">
 <button type="button"  class="projectSummaries">
 {{project.name}}
@@ -7,7 +7,28 @@
 {{project.deadline}}
 </button>
 </a>
-</div>
+</div> -->
 <!-- <button ng-click="deleteProject()" type="button" name="button" class="deleteProject">
   Delete Project
 </button> -->
+<div ng-repeat="project in projects" class="project-button">
+    <a ui-sref="seeProject({id: project.id})">
+      <div class="view-button right">
+        <div class="arrow-button waves-effect waves-light shadow-effect">
+          <img class="arrow"src="/images/arrow.png" alt="" />
+        </div>
+      </div>
+      <div class="project-box shadow-effect ">
+        <div class="project-name  left-align">
+          {{project.name}}
+        </div>
+
+        <br>
+        <div class="start-date  right-align">
+        Start Date:  {{project.startdate}}
+        </div>
+      </div>
+    </a>
+</div>
+
+<add-project-directive></add-project-directive>

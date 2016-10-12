@@ -63,7 +63,7 @@ angular.module("b66Living").directive("addCustomer", function () {
           addressZip: customerAddressZip
         };
 
-        console.log($stateParams.id);
+        // console.log($stateParams.id);
         mainService.createCust(customer, $stateParams.id).then(function (res) {
           if (res.status === 200) {
             alert("Customer Added");
@@ -110,18 +110,22 @@ angular.module("b66Living").directive("addProjectDirective", function () {
 
     restrict: "AE",
     link: function link(scope, element, attributes) {},
-    controller: function controller($scope, mainService) {
+    // scope: {
+    //
+    // },
+    controller: function controller($scope, mainService, $state) {
       //controller is working
-      $scope.newproj = function (projectName, ProjectStartDate, ProjectDeadline) {
+      $scope.newproj = function (projectName, projectStartDate, projectDeadline) {
         //projData will turn the form in to an object that can be passed to the service
-        var projData = {
-          projectName: projectName,
-          ProjectStartDate: ProjectStartDate,
-          ProjectDeadline: ProjectDeadline
+        var newProjectData = {
+          name: projectName,
+          startDate: projectStartDate,
+          deadline: projectDeadline
         };
-        mainService.createProj(projData).then(function (res) {
+        mainService.createProj(newProjectData).then(function (res) {
           if (res.status === 200) {
             alert("Project Added");
+            $state.reload();
           } else {
             //this part isn't working. If the post fails it just gives an error in the console with the err status
             alert("There was a problem processing your request");
@@ -210,8 +214,8 @@ angular.module("b66Living").directive("projectSummaries", function () {
 
 angular.module("b66Living").service("mainService", function ($http) {
   //POST Endpoints!
-  this.createProj = function (data) {
-    return $http.post("admin/project/new", data);
+  this.createProj = function (newProjectData) {
+    return $http.post("admin/project/new", newProjectData);
   };
   this.createCust = function (customer, id) {
     return $http.post("admin/project/" + id + "/customer/new", customer);

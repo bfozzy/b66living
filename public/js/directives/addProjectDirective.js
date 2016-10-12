@@ -8,24 +8,28 @@ angular.module("b66Living")
         link: function(scope, element, attributes){
 
         },
-        controller: function($scope, mainService){
+        // scope: {
+        //
+        // },
+        controller: function($scope, mainService, $state){
           //controller is working
-          $scope.newproj = function(projectName, ProjectStartDate, ProjectDeadline){
+          $scope.newproj = function(projectName, projectStartDate, projectDeadline){
             //projData will turn the form in to an object that can be passed to the service
-            var projData = {
-              projectName: projectName,
-              ProjectStartDate: ProjectStartDate,
-              ProjectDeadline: ProjectDeadline
+            var newProjectData = {
+              name: projectName,
+              startDate: projectStartDate,
+              deadline: projectDeadline
             };
-            mainService.createProj(projData).then(function(res){
+            mainService.createProj(newProjectData).then(function(res){
               if(res.status === 200){
                 alert("Project Added");
+                $state.reload();
+
               }
               else { //this part isn't working. If the post fails it just gives an error in the console with the err status
                 alert("There was a problem processing your request");
               }
             });
-
           };
         }
       };

@@ -14,22 +14,64 @@ $smallBackgroundImage: url("../images/small.jpg");
 // $largeBackgroundImage: "";
 $logoFont1: 'Oxygen', sans-serif;
 $logoFont2: 'Courgette', cursive;
-//Universal Styles
+
+
+//Universal Styles!!!!
+
+
 body{
    background: $smallBackgroundImage;
 }
 .shadow-effect{
-  box-shadow: -2px 2px 6px grey;
+  box-shadow: -2px 2px 6px $darkColor;
 }
 .input-field label{
   color: black;
 }
 .input-field input[type=text]:focus + label {
    color: $mainAccentColor;
- }
+}
+ /* label color */
+.input-field label {
+      color: #000;
+}
+    /* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
+    /* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+    /* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+    /* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+    /* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
+}
+
+.add-button-box{
+  width: 335px;
+  height: 75px;
+  background-color: $lightColor;
+  margin: 19px;
+}
+
 
 
 //NAVIGATION!!!
+
+
+
 .main-header{
   background-color: $darkColor;
   height: 120px;
@@ -64,7 +106,12 @@ margin-right: 40px;
 margin-top: 29px;
 }
 
+
+
 //Add Project!!!!
+
+
+
 .add-project-wrapper{
   width: 100%;
   height: 200px;
@@ -83,7 +130,12 @@ margin-top: 29px;
 
 }
 
+
+
 //Project Summaries!!!!
+
+
+
 .project-button{
   width: 100%;
   height: 100px;
@@ -119,7 +171,7 @@ margin-top: 29px;
   width: 50px;
   height: 50px;
 }
-.arrow-button{
+.round-button{
   height: 55px;
   width: 55px;
   border-radius: 55px;
@@ -127,7 +179,18 @@ margin-top: 29px;
   padding-top: 3px;
   padding-left: 4px;
 }
+.projectSummaries{
+  width: 100px;
+  height: 100px;
+  background-color: $lightColor;
+  margin: 5px;
+}
+
+
 //Project View!!!
+
+
+
 .customerContainer{
   background-color: $lightColor;
   height: 175px;
@@ -139,43 +202,56 @@ hr{
 .editButton{
   margin-right: 5px;
 }
-.content-wrapper{
-  // background-image: "https://hd.unsplash.com/photo-1427477321886-abc24e8ce923";
-  // background: #ccc;
-}
 
 
-
-
-.save-button{
+.save-customer-button{
+  margin-right: 32px;
 
 }
 
-.projectSummaries{
-  width: 100px;
-  height: 100px;
-  background-color: $lightColor;
-  margin: 5px;
-}
-.customerInfo{
+
+
+// Add Customer!!!!
+
+
+
+.add-customer-info{
   width: 550px;
-  height: 150px;
-  background-color: $lightColor;
-}
-.address{
-  width: 550px;
-  height: 150px;
-  background-color: $lightColor;
-}
-.addfields{
-  display: inline-block;
-  /*justify-content: space-around;*/
-}
-.addInvoice{
-  width: 200px;
   height: 200px;
+  background-color: $lightColor;
 }
-.addCustomer{
+.add-customer-address{
+  // width: 550px;
+  // height: 150px;
+  background-color: $lightColor;
+}
+.red-image-add{
+  height: 49px;
+  width: 48px;
+}
+.round-add-button{
+  height: 55px;
+  width: 55px;
+  border-radius: 55px;
+  background-color: $darkColor;
+  padding-top: 3px;
+  padding-left: 4px;
+  position: relative;
+  right: -21px;
+  top: -23px;
+}
+.add-button-box-title{
+  position: relative;
+  top: 25px;
+  left: 20px;
+}
+
+
+// Add Invoice!!!!!!
+
+
+
+.addInvoice{
   width: 200px;
   height: 200px;
 }

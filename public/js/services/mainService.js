@@ -1,8 +1,8 @@
 angular.module("b66Living")
   .service("mainService", function($http){
 //POST Endpoints!
-    this.createProj = function(data){
-      return $http.post("admin/project/new", data);
+    this.createProj = function(newProjectData){
+      return $http.post("admin/project/new", newProjectData);
     };
     this.createCust = function(customer, id){
       return $http.post("admin/project/" + id + "/customer/new", customer);

@@ -49,13 +49,46 @@ body {
   background: url("../images/small.jpg"); }
 
 .shadow-effect {
-  box-shadow: -2px 2px 6px grey; }
+  box-shadow: -2px 2px 6px #2F383D; }
 
 .input-field label {
   color: black; }
 
 .input-field input[type=text]:focus + label {
   color: #A6F284; }
+
+/* label color */
+.input-field label {
+  color: #000; }
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000; }
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000; }
+
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000; }
+
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000; }
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000; }
+
+.add-button-box {
+  width: 335px;
+  height: 75px;
+  background-color: #949394;
+  margin: 19px; }
 
 .main-header {
   background-color: #2F383D;
@@ -134,13 +167,19 @@ body {
   width: 50px;
   height: 50px; }
 
-.arrow-button {
+.round-button {
   height: 55px;
   width: 55px;
   border-radius: 55px;
   background-color: #2F383D;
   padding-top: 3px;
   padding-left: 4px; }
+
+.projectSummaries {
+  width: 100px;
+  height: 100px;
+  background-color: #949394;
+  margin: 5px; }
 
 .customerContainer {
   background-color: #949394;
@@ -153,30 +192,37 @@ hr {
 .editButton {
   margin-right: 5px; }
 
-.projectSummaries {
-  width: 100px;
-  height: 100px;
-  background-color: #949394;
-  margin: 5px; }
+.save-customer-button {
+  margin-right: 32px; }
 
-.customerInfo {
+.add-customer-info {
   width: 550px;
-  height: 150px;
+  height: 200px;
   background-color: #949394; }
 
-.address {
-  width: 550px;
-  height: 150px;
+.add-customer-address {
   background-color: #949394; }
 
-.addfields {
-  display: inline-block;
-  /*justify-content: space-around;*/ }
+.red-image-add {
+  height: 49px;
+  width: 48px; }
+
+.round-add-button {
+  height: 55px;
+  width: 55px;
+  border-radius: 55px;
+  background-color: #2F383D;
+  padding-top: 3px;
+  padding-left: 4px;
+  position: relative;
+  right: -21px;
+  top: -23px; }
+
+.add-button-box-title {
+  position: relative;
+  top: 25px;
+  left: 20px; }
 
 .addInvoice {
-  width: 200px;
-  height: 200px; }
-
-.addCustomer {
   width: 200px;
   height: 200px; }

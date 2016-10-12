@@ -25,19 +25,17 @@ angular.module("b66Living")
                 addressZip: customerAddressZip
               };
 
-            console.log($stateParams.id);
+            // console.log($stateParams.id);
             mainService.createCust(customer, $stateParams.id).then(function(res){
               if(res.status === 200){
-                alert("Customer Added")
+                alert("Customer Added");
                 $state.reload();
               }
               else {
-                alert("There was a problem processing your request")
+                alert("There was a problem processing your request");
               }
-            })
-
+            });
           };
-
         }
       };
     });

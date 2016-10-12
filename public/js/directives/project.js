@@ -25,6 +25,7 @@ angular.module("b66Living")
            mainService.getCustomers($stateParams.id).then(function(res){
             $scope.customers = res.data;
           });
+
         }
       };
     });

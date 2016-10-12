@@ -1,14 +1,42 @@
-<div class="customerInfo input-field">
-    <p>Add Customer</p>
-    <p>Name</p><input type="text" ng-model="customerName" name="name" value="Customer Name">
-    <p>Email</p><input type="text" ng-model="customerEmail" name="CustomerEmail" value="">
-    <p>Phone #</p><input type="text" ng-model="customerPhone" name="CustomerPhone" value=""> 
-    <a class="btn-floating btn-large waves-effect waves-light red"><i ng-click="newCust(customerName, customerEmail, customerPhone, customerAddressLine1, customerAddressLine2, customerAddressCity, customerAddressState, customerAddressZip)" class="material-icons">save</i></a>
+<div ng-show="showAddField" class="add-customer-info shadow-effect input-field container">
+  <div class="row">
+    <div class="col s12 center-align">
+      <h5>Add Customer</h5>
+    </div>
+    <div class="col s6">
+      <p>Name</p><input type="text" ng-model="customerName" name="name" value="Customer Name">
+    </div>
+    <div class="col s6">
+      <p>Email</p><input type="text" ng-model="customerEmail" name="CustomerEmail" value="">
+    </div>
+    <div class="col s6">
+      <p>Phone #</p><input type="text" ng-model="customerPhone" name="CustomerPhone" value="">
+    </div>
+    <div class="save-customer-button col s2 right">
+      <a ng-click="newCust(customerName, customerEmail, customerPhone, customerAddressLine1, customerAddressLine2, customerAddressCity, customerAddressState, customerAddressZip)" class="btn-floating btn-large waves-effect waves-light red"><i  class="material-icons">save</i></a>
+    </div>
+  </div>
 </div>
+
+<div ng-click="showAddField = !showAddField" ng-show="!showAddField"class="add-button-box shadow-effect">
+  <div class="add-button-box-title">
+    <h5>Add Customer Information</h5>
+  </div>
+  <div class="round-add-button shadow-effect waves-effect waves-light right">
+    <div class="red-image-add">
+      <img class="red-image-add right-align"src="/images/add.png" alt="" />
+    </div>
+  </div>
+
+</div>
+
+
+
+
 <!--
 <h1>Customer Address</h1>
 
-<div class="address">
+<div class="add-customer-address">
   <h2>Line 1</h2><input type="text" ng-model="customerAddressLine1" name="CustomerAddressLine1" value="Line 1"> <br>
   <h2>Line 2</h2><input type="text" ng-model="customerAddressLine2" name="CustomerAddressLine2" value="Line 2"> <br>
   <h2>City</h2><input type="text" ng-model="customerAddressCity" name="CustomerAddressCity" value="City"> <br>

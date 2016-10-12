@@ -13,42 +13,41 @@
 
   </ul>
 </div> -->
-<div class="customerContainer container"ng-repeat="project in project">
+<div class="customerContainer shadow-effect container"ng-repeat="project in project">
+
   <div class="row">
+    <div class="containerTitle center-align col s12">
+      <h5>Customer Information</h5>
+    </div>
+    <div class="containerInfo col s12">
+      {{project.customer_name}}
+      <i class="small material-icons left">perm_identity</i>
+    </div>
+    <hr>
+    <div class="containerInfo col s12">
+      {{project.customer_email}}
+      <i class="small material-icons left">email</i>
+    </div>
+    <hr>
 
-  <div class="containerTitle center-align col s12">
-    <h5>Customer Information</h5>
-  </div>
-  <div class="containerInfo col s12">
-    {{project.customer_name}}
-    <i class="small material-icons left">perm_identity</i>
-  </div>
-  <hr>
-  <div class="containerInfo col s12">
-    {{project.customer_email}}
-    <i class="small material-icons left">email</i>
-  </div>
-  <hr>
+    <div class="containerInfo col s6">
+      {{project.customer_phone}}
+      <i class="small material-icons left">phone</i>
+    </div>
 
-  <div class="containerInfo col s6">
-    {{project.customer_phone}}
-    <i class="small material-icons left">phone</i>
+    <div class="editButton">
+      <a class="waves-effect waves-light btn right"><i class="material-icons right">cloud</i>Edit</a>
+    </div>
   </div>
-
-  <div class="editButton">
-    <a class="waves-effect waves-light btn right"><i class="material-icons right">cloud</i>Edit</a>
-
-  </div>
-</div>
-
 </div>
 
 
 
-<!-- <div class="addFields">
+<div class="addFields">
   <div class="addCustomer">
     <add-customer></add-customer>
-  </div> -->
+  </div>
+
 
   <!-- <div class="addInvoice">
     <add-invoice></add-invoice>

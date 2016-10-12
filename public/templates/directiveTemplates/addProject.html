@@ -6,22 +6,21 @@
     </div>
 
     <div class="add-project-form-wrapper row">
-      <form class="col 12">
-        <div class="input-field col s6">
-          <input ng-model="projectName" id="project_name" type="text">
-          <label for="project_name">Project Name</label>
+      <div class="col 12">
+        <div class=" col s6">
+          Name:<input ng-model="projectName" id="project_name" type="text">
         </div>
-        <div class="input-field col s6">
-          <input ng-model="projectStartDate" id="project_start" type="text">
-          <label class="text-black"for="project_start_date">Start Date</label>
+        <div class=" col s6">
+          Start Date:<input ng-model="projectStartDate" id="project_start" type="text">
         </div>
-        <div class="input-field col s6">
-          <input  ng-model="projectDeadline" id="project_deadline" type="text">
-          <label for="project_deadline">Deadline</label>
+        <div class=" col s6">
+          Deadline:<input  ng-model="projectDeadline" id="project_deadline" type="text">
         </div>
-
-        <button ng-click="newproj(projectName, projectStartDate, ProjectDeadline)"type="button" name="save">Save Project</button>
-    </form>
+        <div class="col s6 right-align">
+          <a class="btn-floating btn-large waves-effect waves-light red" ng-click="newproj(projectName, projectStartDate, ProjectDeadline)"><i  class="material-icons">save</i></a>
+        </div>
+        <!-- <button ng-click="newproj(projectName, projectStartDate, ProjectDeadline)"type="button" name="save">Save Project</button> -->
+      </div>
     </div>
 
   </div>

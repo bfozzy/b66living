@@ -38,13 +38,13 @@ createNewInvoice: function(req, res){
   //GET Functions
   getProjects: function(req, res){
     db.get_projects(function(err, projects){
-      console.log(projects);
+      // console.log(projects);
       if(err){
         res.status(400).json(err);
       }
       else {
         res.status(200).json(projects);
-        console.log(projects);
+        // console.log(projects);
       }
     });
   },

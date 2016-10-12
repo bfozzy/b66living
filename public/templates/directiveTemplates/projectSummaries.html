@@ -1,3 +1,5 @@
+<div class="project-summaries-content">
+
 <!-- {{projects}} -->
 <!-- <div ng-repeat="project in projects" class="projectSummaries">
 <a ui-sref="seeProject({id: project.id})">
@@ -20,7 +22,10 @@
       </div>
       <div class="project-box shadow-effect ">
         <div class="project-name  left-align">
-          {{project.name}}
+          <h5>{{project.name}}</h5>
+          <!-- <div class="hr-div">
+            <hr size="1px" class="summary-hr">
+          </div> -->
         </div>
 
         <br>
@@ -32,3 +37,4 @@
 </div>
 
 <add-project-directive></add-project-directive>
+</div>

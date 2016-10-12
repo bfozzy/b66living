@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("b66Living", ["ui.router"]).config(function ($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise("/admin/home");
   //Rule to avoid trailing '/' in url
   $urlRouterProvider.rule(function ($injector, $location) {
 
@@ -17,7 +17,7 @@ angular.module("b66Living", ["ui.router"]).config(function ($stateProvider, $url
   });
   $stateProvider.state("home", {
     templateUrl: "templates/routeTemplates/home.html",
-    url: "/"
+    url: "/admin/home"
   }).state("projects", {
     templateUrl: "templates/routeTemplates/projects.html",
     url: "/admin/projects"
@@ -153,7 +153,7 @@ angular.module("b66Living").directive("navBar", function () {
           $scope.navProjectName = res.data[0].project_name;
         });
       } else {
-        $scope.navProjectName = 'Project Button';
+        $scope.navProjectName = 'Projects';
       }
       // console.log(res.data[0].project_name);
 

@@ -1,8 +1,22 @@
-<div class="add-project-wrapper">
+
+<div class="add-project-button-wrapper" ng-click="showAddProjectField = !showAddProjectField" ng-show="!showAddProjectField">
+  <div class="add-button-box shadow-effect">
+    <h5 class="add-project-title center-align">Add Project</h5>
+
+    <div class="add-project-round-button round-button right shadow-effect">
+      <div class="red-image-add">
+        <img class="red-image-add right-align"src="/images/add.png" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="add-project-wrapper" ng-show="showAddProjectField">
   <div class="add-project-box shadow-effect">
 
     <div class="add-project-title center-align">
-      Project Details
+      <h5>New Project Details</h5>
     </div>
 
     <div class="add-project-form-wrapper row">

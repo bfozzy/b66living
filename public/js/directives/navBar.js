@@ -18,10 +18,10 @@ angular.module("b66Living")
               //  console.log("if statement works");
                $scope.navProjectName = res.data[0].project_name;
              });
-               
+
              }
              else {
-               $scope.navProjectName = 'Project Button';
+               $scope.navProjectName = 'Projects';
              }
             // console.log(res.data[0].project_name);
 

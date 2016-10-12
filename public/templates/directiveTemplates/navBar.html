@@ -1,16 +1,16 @@
-<div class="header-wrapper row">
+<div class="header-wrapper ">
   <div class="main-header">
 
       <a ui-sref="home">
-        <div class="companyLogo left">
+        <div class="companyLogo">
           <span class="b66"><p>B66</p></span>
           <span class="living"><p>living</p></span>
         </div>
       </a>
-      <div ng-model="navProjectName"class="navProjectName right-align right">
-        <h4 class="white-text">{{navProjectName}}</h4>
-      </div>
-
+      <a class="nav-project-name-text" ui-sref="projects">
+        <div ng-model="navProjectName"class="navProjectName darker-shadow-effect">
+            <h5 >{{navProjectName}}</h5>
+        </div>
+      </a>
   </div>
-
 </div>

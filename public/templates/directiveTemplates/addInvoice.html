@@ -1,6 +1,30 @@
-<div class="addInvoice input-field">
-    <p>Add Invoice</p>
-    <p>Month/Year</p><input type="text" ng-model="invoicePeriod" name="name" value="MM/YYYY">
-    <p>Description</p><input type="text" ng-model="invoiceDesc" name="invoiceDesc" value="">
-    <a class="save-button btn-floating btn-large waves-effect waves-light red"><i ng-click="createInv(invoicePeriod, invoiceDesc)" class="material-icons">save</i></a>
+<div ng-click="showAddInvoiceField = !showAddInvoiceField" ng-show="!showAddInvoiceField" class="add-button-box shadow-effect">
+  <div class="add-button-box-title">
+    <h5>Add Invoice</h5>
+  </div>
+  <div class="round-add-button shadow-effect waves-effect waves-light right">
+    <div class="red-image-add">
+      <img class="red-image-add right-align"src="/images/add.png" alt="" />
+    </div>
+  </div>
+</div>
+
+
+<div ng-show="showAddInvoiceField" class="addInvoice input-field shadow-effect container">
+  <div class="row">
+
+      <div class="col s12 center-align">
+        <h5>Add Invoice</h5>
+      </div>
+      <div class="col s6">
+        <p>Month/Year</p><input type="text" ng-model="invoicePeriod" name="name" value="MM/YYYY">
+      </div>
+      <div class="col s6">
+        <p>Description</p><input type="text" ng-model="invoiceDesc" name="name" value="Description">
+      </div>
+      <div class="save-customer-button col s2 right">
+        <a ng-click="createInv(invoicePeriod, invoiceDesc)" class="btn-floating btn-large waves-effect waves-light red"><i  class="material-icons">save</i></a>
+      </div>
+  </div>
+
 </div>

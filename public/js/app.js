@@ -1,6 +1,6 @@
 angular.module("b66Living", ["ui.router"])
   .config(function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/admin/home");
     //Rule to avoid trailing '/' in url
     $urlRouterProvider.rule(function($injector, $location) {
 
@@ -18,7 +18,7 @@ angular.module("b66Living", ["ui.router"])
     $stateProvider
     .state("home", {
       templateUrl: "templates/routeTemplates/home.html",
-      url: "/"
+      url: "/admin/home"
     })
       .state("projects", {
         templateUrl: "templates/routeTemplates/projects.html",

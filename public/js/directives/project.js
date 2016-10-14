@@ -8,24 +8,43 @@ angular.module("b66Living")
         link: function(scope, element, attributes){
 
         },
-        controller: function($scope, mainService, $stateParams){
-          // $scope.getProject =
+        controller: function($scope, mainService, $stateParams, $state){
            mainService.getProject($stateParams.id).then(function(res){
-            // console.log(res.data);
+             console.log(res.data);
             $scope.project = res.data;
           });
 
-          // $scope.getInvoices =
            mainService.getInvoices($stateParams.id).then(function(res){
-            // console.log(res.data);
             $scope.invoices = res.data;
           });
 
-          // $scope.getCustomers =
            mainService.getCustomers($stateParams.id).then(function(res){
             $scope.customers = res.data;
           });
 
+          $scope.deleteCustomer = function(customerId){
+            swal(
+              {
+              title: "Are you sure?",
+              text: "You will not be able to recover this imaginary file!",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "Yes, delete it!",
+              closeOnConfirm: false
+              },
+              function(){
+                mainService.deleteCustomer(customerId).then(function(res){
+                  if (res.status === 200){
+                    swal("Deleted!", "Customer removed from project.", "success");
+                    $state.reload();
+                  }
+                });
+              });
+
+
+
+          };
         }
       };
-    });
+  });

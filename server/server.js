@@ -24,7 +24,8 @@ app.get("/admin/projects", projectCtrl.getProjects);
 app.get("/admin/project/:id", projectCtrl.getProject);
 app.get("/admin/project/:id/invoices", projectCtrl.getInvoices);
 app.get("/admin/project/:id/customers", projectCtrl.getCustomers);
-
+//Delete Endpoints
+app.delete("/admin/project/customer/:customerId", projectCtrl.deleteCustomer);
 
 var port = serverConfig.serverPort;
 

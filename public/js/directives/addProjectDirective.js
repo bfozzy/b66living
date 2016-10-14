@@ -22,7 +22,7 @@ angular.module("b66Living")
             };
             mainService.createProj(newProjectData).then(function(res){
               if(res.status === 200){
-                alert("Project Added");
+                swal("Project Added");
                 $state.reload();
 
               }

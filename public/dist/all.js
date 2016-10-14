@@ -66,7 +66,7 @@ angular.module("b66Living").directive("addCustomer", function () {
         // console.log($stateParams.id);
         mainService.createCust(customer, $stateParams.id).then(function (res) {
           if (res.status === 200) {
-            alert("Customer Added");
+            swal("Customer Added");
             $state.reload();
           } else {
             alert("There was a problem processing your request");
@@ -124,7 +124,7 @@ angular.module("b66Living").directive("addProjectDirective", function () {
         };
         mainService.createProj(newProjectData).then(function (res) {
           if (res.status === 200) {
-            alert("Project Added");
+            swal("Project Added");
             $state.reload();
           } else {
             //this part isn't working. If the post fails it just gives an error in the console with the err status
@@ -168,23 +168,38 @@ angular.module("b66Living").directive("project", function () {
 
     restrict: "AE",
     link: function link(scope, element, attributes) {},
-    controller: function controller($scope, mainService, $stateParams) {
-      // $scope.getProject =
+    controller: function controller($scope, mainService, $stateParams, $state) {
       mainService.getProject($stateParams.id).then(function (res) {
-        // console.log(res.data);
+        console.log(res.data);
         $scope.project = res.data;
       });
 
-      // $scope.getInvoices =
       mainService.getInvoices($stateParams.id).then(function (res) {
-        // console.log(res.data);
         $scope.invoices = res.data;
       });
 
-      // $scope.getCustomers =
       mainService.getCustomers($stateParams.id).then(function (res) {
         $scope.customers = res.data;
       });
+
+      $scope.deleteCustomer = function (customerId) {
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this imaginary file!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Yes, delete it!",
+          closeOnConfirm: false
+        }, function () {
+          mainService.deleteCustomer(customerId).then(function (res) {
+            if (res.status === 200) {
+              swal("Deleted!", "Customer removed from project.", "success");
+              $state.reload();
+            }
+          });
+        });
+      };
     }
   };
 });
@@ -235,5 +250,9 @@ angular.module("b66Living").service("mainService", function ($http) {
   };
   this.getCustomers = function (id) {
     return $http.get("admin/project/" + id + "/customers");
+  };
+  //DELETE Endpoints!
+  this.deleteCustomer = function (customerId) {
+    return $http.delete("admin/project/customer/" + customerId);
   };
 });

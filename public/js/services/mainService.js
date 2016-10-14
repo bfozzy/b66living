@@ -23,4 +23,8 @@ angular.module("b66Living")
     this.getCustomers = function(id){
       return $http.get("admin/project/"+id+"/customers");
     };
+    //DELETE Endpoints!
+    this.deleteCustomer = function(customerId){
+      return $http.delete("admin/project/customer/" + customerId);
+    };
   });

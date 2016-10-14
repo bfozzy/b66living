@@ -58,6 +58,9 @@ body {
 a {
   text-decoration: none; }
 
+.soft-border {
+  border-radius: 3px; }
+
 .shadow-effect {
   box-shadow: -2px 2px 6px #2F383D; }
 
@@ -302,7 +305,7 @@ hr {
   height: 49px;
   width: 48px;
   position: relative;
-  right: 4px;
+  right: 4.5px;
   bottom: 4px; }
 
 .round-add-button {
@@ -331,3 +334,40 @@ hr {
   width: 550px;
   height: 200px;
   background-color: #949394; }
+
+.invoice-container-wrapper {
+  background-color: #2F383D;
+  width: 337px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 19px;
+  margin-top: 12px;
+  max-height: 300px;
+  overflow: scroll; }
+
+.invoice-container {
+  min-width: 158px;
+  height: 100px;
+  background-color: #949394;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center; }
+
+.invoices-section-title {
+  color: white;
+  margin: 0px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+.invoice-period-text {
+  font-size: 20px;
+  color: #A6F284; }
+
+.invoice-description-text {
+  font-size: 20px;
+  color: #2F383D; }

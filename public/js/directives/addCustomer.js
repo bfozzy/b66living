@@ -28,7 +28,7 @@ angular.module("b66Living")
             // console.log($stateParams.id);
             mainService.createCust(customer, $stateParams.id).then(function(res){
               if(res.status === 200){
-                alert("Customer Added");
+                swal("Customer Added");
                 $state.reload();
               }
               else {

@@ -1,10 +1,19 @@
 <div class="project-content">
 
     <nav-bar> </nav-bar>
+<div class="project-dates container">
+  <div ng-repeat="project in project" class="row">
+    <div class="col s6">
+      <h5>{{project.project_start_date}}</h5>
+    </div>
+    <div class="col s6">
+      <h5>{{project.project_deadline}}</h5>
+    </div>
+  </div>
+</div>
 
 
-
-    <div class="customerContainer shadow-effect container"ng-repeat="project in project">
+    <div class="customerContainer shadow-effect container soft-border"ng-repeat="project in project">
       <div class="row">
         <div class="containerTitle center-align col s12">
           <h5>Customer Information</h5>
@@ -27,7 +36,7 @@
 
         <div class="deleteButton right">
           <div class="round-delete-button shadow-effect waves-effect waves-light ">
-            <div class="red-image-delete">
+            <div ng-click="deleteCustomer(project.customer_id)"  class="red-image-delete">
               <img class="red-image-delete right-align"src="/images/delete.png" alt="" />
             </div>
           </div>
@@ -55,23 +64,19 @@
         </ul>
       </div> -->
 
+    <div class="invoice-container-wrapper soft-border">
 
+      <div class="invoices-section-title">
+        <h4>Invoices</h4>
+      </div>
+      <div ng-repeat="invoice in invoices"class="invoice-container darker-shadow-effect soft-border">
 
-
-      <!-- <div class="addInvoice"> -->
-        <add-invoice></add-invoice>
-      <!-- </div> -->
-    </div>
-    
-    <div class="invoice-container-wrapper container">
-      <div class="invoice-container row">
-
-        <div class="invoice-period col s6">
-          {{invoice.invoice_period}}
+        <div class="invoice-period">
+        <div class="invoice-period-text"><i class="material-icons">today</i>{{invoice.invoice_period}}</div>
         </div>
-        <div class="invoice-description col s6">
-          {{invoice.invoice_description}}
+        <div class="invoice-description">
+          <div class="invoice-description-text">{{invoice.invoice_description}}</div>
         </div>
       </div>
     </div>
-</div>
+    <add-invoice></add-invoice>

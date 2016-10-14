@@ -90,6 +90,17 @@ createNewInvoice: function(req, res){
       }
 
     });
+  },
+  //Delete Functions!!!!
+  deleteCustomer: function(req,res){
+    db.delete_customer(req.params.customerId, function(err){
+      if(err){
+        res.status(400).json(err);
+      }
+      else{
+        res.status(200).json("Project Deleted");
+      }
+    });
   }
 
 

@@ -151,6 +151,7 @@ angular.module("b66Living").directive("invoice", function () {
         $scope.products = res.data;
         console.log(res.data);
       });
+
       var productIndex = function productIndex() {
         var productLength = res.data.length;
         for (var i = 0; i < productLength; i++) {
@@ -160,20 +161,26 @@ angular.module("b66Living").directive("invoice", function () {
           $scope.index = i + 1;
           $scope.productSubtotal = subtot;
         }
-      };
+      }; // End of productIndex
+
       productIndex();
       // console.log($stateParams);
-      $scope.addProduct = function () {
-        mainService.addProduct($stateParams.invoiceId).then(function (res) {
-          //Still need to create the service, server.js and ctrl sides of the function
+      $scope.addProduct = function (productDescription, productWholesale, productRetail, productTax) {
+        var newProduct = {
+          description: productDescription,
+          wholesale: productWholesale,
+          retail: productRetail,
+          tax: productTax
+        };
+        mainService.addProduct($stateParams.invoiceId, newProduct).then(function (res) {
           if (res === 200) {
             swal("Product Added!");
           }
         });
-      };
-    }
-  };
-});
+      }; //End of addProduct
+    } //End of Controller
+  }; //End of directive return statement
+}); //End of directive
 
 angular.module("b66Living").directive("navBar", function () {
   return {
@@ -316,6 +323,9 @@ angular.module("b66Living").service("mainService", function ($http) {
   };
   this.createInvoice = function (invoice, id) {
     return $http.post("admin/project/" + id + "/invoice/new", invoice);
+  };
+  this.addProduct = function (invoiceId) {
+    return $http.post("admin/project/invoice/" + inovoiceId);
   };
   //GET Endpoints!
   this.showProjects = function () {

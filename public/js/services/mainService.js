@@ -10,6 +10,9 @@ angular.module("b66Living")
     this.createInvoice = function(invoice, id){
       return $http.post("admin/project/"+id+"/invoice/new", invoice);
     };
+    this.addProduct = function(invoiceId){
+      return $http.post("admin/project/invoice/"+inovoiceId);
+    };
     //GET Endpoints!
     this.showProjects = function(){
       return $http.get("admin/projects");

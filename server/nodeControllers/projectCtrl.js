@@ -26,7 +26,17 @@ module.exports = {
 
   },
 createNewInvoice: function(req, res){
-  db.create_new_invoice([req.params.id, req.body.invoicePeriod, req.body.invoiceDesc], function(err, invoice){
+  db.create_new_invoice([req.params.id, req.body.invoicePeriod, req.body.invoiceDesc], function(err){
+    if(err){
+      res.status(400).json(err);
+    }
+    else {
+      res.status(200).json("Invoice Added");
+    }
+  });
+},
+createNewProduct: function(req, res){
+  db.create_new_product([req.params.invoiceId, req.body.description, req.body.wholesale,req.body.retail, req.body.tax], function(err){
     if(err){
       res.status(400).json(err);
     }

@@ -38,13 +38,11 @@ createNewInvoice: function(req, res){
   //GET Functions
   getProjects: function(req, res){
     db.get_projects(function(err, projects){
-      // console.log(projects);
       if(err){
         res.status(400).json(err);
       }
       else {
         res.status(200).json(projects);
-        // console.log(projects);
       }
     });
   },
@@ -56,17 +54,9 @@ createNewInvoice: function(req, res){
       else{
         res.status(200).json(project);
       }
-      // db.get_customer([req.params.id], function(err, customer){
-      //   if(err){
-      //     res.status(400).json(err);
-      //   }
-      //   else{
-      //     res.status(200).json(customer);
-      //   }
-      // })
-      // console.log(project);
+
     });
-    // console.log(req.params.id); req.params.id is logging correctly
+
   },
   getInvoices: function(req,res) {
     db.get_invoices([req.params.id], function(err, invoices){
@@ -91,6 +81,17 @@ createNewInvoice: function(req, res){
 
     });
   },
+  getProducts: function(req,res) {
+    db.get_products([req.params.invoiceId], function(err, products){
+      if(err){
+        res.status(400).json(err);
+      }
+      else{
+        res.status(200).json(products);
+      }
+
+    });
+  },
   //Delete Functions!!!!
   deleteCustomer: function(req,res){
     db.delete_customer(req.params.customerId, function(err){
@@ -101,8 +102,50 @@ createNewInvoice: function(req, res){
         res.status(200).json("Project Deleted");
       }
     });
-  }
+  },
+  deleteInvoice: function(req,res){
+    db.delete_invoice(req.params.invoiceId, function(err){
+      if(err){
+        res.status(400).json(err);
+      }
+      else{
+        res.status(200).json("Invoice Deleted");
+      }
+    });
+  },
 
+  ////ALL OF THIS HAPPENS WHEN A PROJECT IS DELETED!!!!!!!!!!!
+  deleteProject: function(req,res){
+    db.delete_project(req.params.id,  function(err){
+      if(err){
+        res.status(400).json(err);
+      }
+      else{
+        res.status(200).json("Project Deleted");
+      }
+    });
+  },
+  deleteInvoices: function(req,res){
+    db.delete_project_invoices(req.params.id, function(err){
+      if(err){
+        res.status(400).json(err);
+      }
+      else{
+        res.status(200).json("Invoices deleted");
+      }
+    });
+  },
+  deleteCustomers: function(req,res){
+    db.delete_project_customers(req.params.id, function(err){
+      if(err){
+        res.status(400).json(err);
+      }
+      else{
+        res.status(200).json("Customers deleted");
+      }
+    });
+  }
+//END OF PROJECT DELETION TASKS!!!
 
 
 

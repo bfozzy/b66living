@@ -35,6 +35,9 @@ angular.module("b66Living", ["ui.router"])
       .state("seeProject", {
         templateUrl: "templates/routeTemplates/projectDetail.html",
         url: "/admin/projects/:id"
+      })
+      .state("seeInvoice", {
+        template: "<invoice></invoice>",
+        url: "/admin/projects/:id/invoice/:invoiceId"
       });
-
   });

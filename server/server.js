@@ -24,8 +24,17 @@ app.get("/admin/projects", projectCtrl.getProjects);
 app.get("/admin/project/:id", projectCtrl.getProject);
 app.get("/admin/project/:id/invoices", projectCtrl.getInvoices);
 app.get("/admin/project/:id/customers", projectCtrl.getCustomers);
-//Delete Endpoints
+app.get("/admin/project/:id/invoice/:invoiceId/products", projectCtrl.getProducts);
+//Delete Endpoints!!!
 app.delete("/admin/project/customer/:customerId", projectCtrl.deleteCustomer);
+app.delete("/admin/project/invoice/:invoiceId", projectCtrl.deleteInvoice);
+//THESE ALL HAPPEN WHEN A PROJECT IS DELETED!!!!
+app.delete("/admin/project/:id", projectCtrl.deleteProject);
+app.delete("/admin/project/:id/customers", projectCtrl.deleteInvoices);
+app.delete("/admin/project/:id/invoices", projectCtrl.deleteCustomers);
+//END OF PROJECT DELETION TASKS!!!
+
+
 
 var port = serverConfig.serverPort;
 

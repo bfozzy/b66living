@@ -30,6 +30,9 @@ angular.module("b66Living", ["ui.router"]).config(function ($stateProvider, $url
   }).state("seeProject", {
     templateUrl: "templates/routeTemplates/projectDetail.html",
     url: "/admin/projects/:id"
+  }).state("seeInvoice", {
+    template: "<invoice></invoice>",
+    url: "/admin/projects/:id/invoice/:invoiceId"
   });
 });
 
@@ -136,6 +139,42 @@ angular.module("b66Living").directive("addProjectDirective", function () {
   };
 });
 
+angular.module("b66Living").directive("invoice", function () {
+  return {
+
+    templateUrl: "./templates/directiveTemplates/invoice.html",
+
+    restrict: "AE",
+    link: function link(scope, element, attributes) {},
+    controller: function controller($scope, mainService, $stateParams) {
+      mainService.getProducts($stateParams.id, $stateParams.invoiceId).then(function (res) {
+        $scope.products = res.data;
+        console.log(res.data);
+      });
+      var productIndex = function productIndex() {
+        var productLength = res.data.length;
+        for (var i = 0; i < productLength; i++) {
+          var subtot = 0;
+          // subtot += Number(res.data[i])
+          // console.log(i);
+          $scope.index = i + 1;
+          $scope.productSubtotal = subtot;
+        }
+      };
+      productIndex();
+      // console.log($stateParams);
+      $scope.addProduct = function () {
+        mainService.addProduct($stateParams.invoiceId).then(function (res) {
+          //Still need to create the service, server.js and ctrl sides of the function
+          if (res === 200) {
+            swal("Product Added!");
+          }
+        });
+      };
+    }
+  };
+});
+
 angular.module("b66Living").directive("navBar", function () {
   return {
 
@@ -170,12 +209,14 @@ angular.module("b66Living").directive("project", function () {
     link: function link(scope, element, attributes) {},
     controller: function controller($scope, mainService, $stateParams, $state) {
       mainService.getProject($stateParams.id).then(function (res) {
-        console.log(res.data);
+        //  console.log(res.data[0].project_id);
         $scope.project = res.data;
+        $scope.projectId = res.data[0].project_id;
       });
 
       mainService.getInvoices($stateParams.id).then(function (res) {
         $scope.invoices = res.data;
+        // console.log(res.data);
       });
 
       mainService.getCustomers($stateParams.id).then(function (res) {
@@ -185,7 +226,7 @@ angular.module("b66Living").directive("project", function () {
       $scope.deleteCustomer = function (customerId) {
         swal({
           title: "Are you sure?",
-          text: "You will not be able to recover this imaginary file!",
+          text: "You will not be able to recover this customer's information!",
           type: "warning",
           showCancelButton: true,
           confirmButtonColor: "#DD6B55",
@@ -195,6 +236,24 @@ angular.module("b66Living").directive("project", function () {
           mainService.deleteCustomer(customerId).then(function (res) {
             if (res.status === 200) {
               swal("Deleted!", "Customer removed from project.", "success");
+              $state.reload();
+            }
+          });
+        });
+      };
+      $scope.deleteInvoice = function (invoiceId) {
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this invoice!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Yes, delete it!",
+          closeOnConfirm: false
+        }, function () {
+          mainService.deleteInvoice(invoiceId).then(function (res) {
+            if (res.status === 200) {
+              swal("Deleted!", "Invoice removed from project.", "success");
               $state.reload();
             }
           });
@@ -212,17 +271,37 @@ angular.module("b66Living").directive("projectSummaries", function () {
     restrict: "AE",
     link: function link(scope, element, attributes) {},
     controller: function controller($scope, mainService, $state) {
-
-      // $scope.getProjects = function(){
       mainService.showProjects().then(function (res) {
         console.log(res.data);
         $scope.projects = res.data;
       });
-      // };
 
-      // $scope.deleteProject = function(projectId){
-      //   console.log(projectId);//this should go in the project directive
-      // };
+      $scope.deleteProject = function (projectId) {
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover any information from this project!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Yes, delete it!",
+          closeOnConfirm: false
+        }, function () {
+          mainService.deleteInvoices(projectId).then(function (res) {
+            if (res.status === 200) {
+              mainService.deleteCustomers(projectId).then(function (res) {
+                if (res.status === 200) {
+                  mainService.deleteProject(projectId).then(function (res) {
+                    if (res.status === 200) {
+                      swal("Deleted!", "This project, it's customers and it's invoices are gone forever.", "success");
+                      $state.reload();
+                    }
+                  });
+                }
+              });
+            }
+          });
+        });
+      };
     }
   };
 });
@@ -251,8 +330,23 @@ angular.module("b66Living").service("mainService", function ($http) {
   this.getCustomers = function (id) {
     return $http.get("admin/project/" + id + "/customers");
   };
+  this.getProducts = function (id, invoiceId) {
+    return $http.get("admin/project/" + id + "/invoice/" + invoiceId + "/products");
+  };
   //DELETE Endpoints!
   this.deleteCustomer = function (customerId) {
     return $http.delete("admin/project/customer/" + customerId);
+  };
+  this.deleteCustomers = function (id) {
+    return $http.delete("admin/project/" + id + "/customers");
+  };
+  this.deleteInvoice = function (invoiceId) {
+    return $http.delete("admin/project/invoice/" + invoiceId);
+  };
+  this.deleteInvoices = function (id) {
+    return $http.delete("admin/project/" + id + "/invoices");
+  };
+  this.deleteProject = function (id) {
+    return $http.delete("admin/project/" + id);
   };
 });

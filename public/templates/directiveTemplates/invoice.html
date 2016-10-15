@@ -1,0 +1,98 @@
+<nav-bar> </nav-bar>
+
+
+<!-- Invoice Display!!!! -->
+<div class="customerContainer shadow-effect container soft-border">
+    <div ng-repeat="product in products" class="row">
+      <div class="containerTitle center-align col s12">
+        <h5>Invoice Information</h5>
+      </div>
+      <div class="containerInfo col s12">
+        {{product.description}}
+        <i class="small material-icons left">perm_identity</i>
+      </div>
+      <hr>
+      <div class="containerInfo col s12">
+        Retail: ${{product.retail}}
+        <i class="small material-icons left">email</i>
+      </div>
+      <hr>
+
+      <div class="containerInfo col s6">
+        Wholesale: ${{product.wholesale}}
+        <i class="small material-icons left">phone</i>
+      </div>
+
+      <div class="deleteButton right">
+        <div class="round-delete-button shadow-effect waves-effect waves-light ">
+          <div ng-click=""  class="red-image-delete">
+            <img class="red-image-delete right-align"src="/images/delete.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<table class="customerContainer shadow-effect container soft-border">
+  <tr>
+    <th>#</th>
+    <th>Wholesale</th>
+    <th>Retail</th>
+    <th>Tax</th>
+    <th>Description</th>
+    <th>Subtotal</th>
+
+  </tr>
+  <tr ng-repeat="product in products">
+    <th>{{index}}</th>
+    <th>{{product.wholesale}}</th>
+    <th>{{product.retail}}</th>
+    <th>{{product.tax}}</th>
+    <th>{{product.description}}</th>
+    <th>{{productSubtotal}}</th>
+
+  </tr>
+</table>
+
+
+<!-- Add Product!!!!!! -->
+
+<div ng-show="showAddProductField" class="add-customer-info shadow-effect input-field container soft-border">
+  <div class="row">
+    <div class="col s12 center-align">
+      <h5>Add Product</h5>
+    </div>
+    <div class="col s6">
+      <p>Description</p><input type="text" ng-model="productDescription" name="name" value="productDescription">
+    </div>
+    <div class="col s6">
+      <p>Price(wholesale)</p><input type="text" ng-model="productWholesale" name="productWholesale" value="">
+    </div>
+    <div class="col s6">
+      <p>price(retail)</p><input type="text" ng-model="productRetail" name="productRetail" value="">
+    </div>
+    <div class="col s6">
+      <p>Tax</p><input type="text" ng-model="productTax" name="productTax" value="">
+    </div>
+    <div class="save-customer-button col s2 right">
+      <a ng-click="addProduct(productDescription,productWholesale,productRetail,productTax)" class="btn-floating btn-large waves-effect waves-light red"><i  class="material-icons">save</i></a>
+    </div>
+  </div>
+</div>
+
+<div ng-click="showAddProductField = !showAddProductField" ng-show="!showAddProductField"class="add-button-box shadow-effect soft-border">
+  <div class="add-button-box-title">
+    <h5>Add Product</h5>
+  </div>
+  <div class="round-add-button shadow-effect waves-effect waves-light right">
+    <div class="red-image-add">
+      <img class="red-image-add right-align"src="/images/add.png" alt="" />
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Add Hours!!!!!! -->

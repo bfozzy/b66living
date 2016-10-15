@@ -65,18 +65,29 @@
       </div> -->
 
     <div class="invoice-container-wrapper soft-border">
-
       <div class="invoices-section-title">
         <h4>Invoices</h4>
       </div>
       <div ng-repeat="invoice in invoices"class="invoice-container darker-shadow-effect soft-border">
-
+        <a ui-sref="seeInvoice({id: projectId, invoiceId: invoice.invoice_id})">
         <div class="invoice-period">
-        <div class="invoice-period-text"><i class="material-icons">today</i>{{invoice.invoice_period}}</div>
+          <div class="invoice-period-text">
+            <i class="material-icons">today</i>
+            {{invoice.invoice_period}}
+          <div class="invoice-delete-container "ng-click="deleteInvoice(invoice.invoice_id)">
+            <div class="small-delete-button shadow-effect waves-effect waves-light">
+              <div class="small-red-image-delete">
+                <img class="small-red-image-delete"src="/images/delete.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          </div>
         </div>
         <div class="invoice-description">
           <div class="invoice-description-text">{{invoice.invoice_description}}</div>
         </div>
+      </a>
       </div>
     </div>
     <add-invoice></add-invoice>

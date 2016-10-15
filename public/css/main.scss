@@ -218,6 +218,8 @@ width: 100%;
   width: 100%;
   height: 100px;
   margin-left: 10px;
+  top: 7px;
+right: -10px;
 }
 .view-button{
   height: 60px;
@@ -251,6 +253,8 @@ width: 100%;
 .arrow{
   width: 50px;
   height: 50px;
+  bottom: 9px;
+  right: 9px;
 }
 
 .projectSummaries{
@@ -262,6 +266,10 @@ width: 100%;
 .project-summaries-content{
   height: 577px;
   overflow: scroll;
+}
+.project-delete-container{
+position: relative;
+top: -32px;
 }
 
 //Project View!!!
@@ -296,12 +304,82 @@ hr{
   padding-top: 3px;
   padding-left: 4px;
   margin-right: 5px;
+
 }
 .red-image-delete{
   height: 30px;
 width: 30px;
 }
+.small-button-container{
+  justify-content: flex-end;
+}
+.small-delete-button{
+  height: 23px;
+  width: 23px;
+  border-radius: 17px;
+  background-color: $darkColor;
+  align-self: flex-end;
+  margin-left: 10px;
 
+}
+.small-red-image-delete{
+  height: 17px;
+  width: 17px;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+
+//Invoices on Project page!!
+.invoice-container-wrapper{
+  background-color: $darkColor;
+  width: 337px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 19px;
+  margin-top: 12px;
+  max-height: 300px;
+  overflow: scroll;
+
+}
+.invoice-container{
+  min-width: 158px;
+  height: 100px;
+  background-color: $lightColor;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.invoices-section-title{
+  color: white;
+  margin: 0px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.invoice-period{
+  display: flex;
+  justify-content: space-around;
+}
+.invoice-period-text{
+  font-size: 20px;
+  color: $mainAccentColor;
+  display: inherit;
+  justify-content: space-around;
+  margin-left: 15px;
+}
+.invoice-description-text{
+font-size: 20px;
+color: $darkColor;
+
+}
+.invoice-delete-container{
+  margin-left: 5px;
+}
 // Add Customer!!!!
 
 
@@ -353,48 +431,4 @@ width: 30px;
   width: 550px;
   height: 200px;
   background-color: $lightColor;
-}
-
-//Invoices on Project page!!
-.invoice-container-wrapper{
-  // width: 550px;
-  background-color: $darkColor;
-  width: 337px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-left: 19px;
-  margin-top: 12px;
-  // padding-top: 60px;
-  max-height: 300px;
-  overflow: scroll;
-
-}
-.invoice-container{
-  // width: 550px;
-  min-width: 158px;
-  height: 100px;
-  background-color: $lightColor;
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-}
-.invoices-section-title{
-  color: white;
-  margin: 0px;
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.invoice-period-text{
-  font-size: 20px;
-  color: $mainAccentColor;
-}
-.invoice-description-text{
-font-size: 20px;
-color: $darkColor;
-
 }

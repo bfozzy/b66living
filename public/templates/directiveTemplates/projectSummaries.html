@@ -13,35 +13,38 @@
 <!-- <button ng-click="deleteProject()" type="button" name="button" class="deleteProject">
   Delete Project
 </button> -->
-<div ng-repeat="project in projects" class="project-button soft-border">
-  <a ui-sref="seeProject({id: project.id})">
-    <div class="view-button right">
-      <!-- <div class="round-button waves-effect waves-light shadow-effect"> -->
-        <img class="arrow"src="/images/arrow.png" alt="" />
-      <!-- </div> -->
-    </div>
-    <div class="project-box shadow-effect soft-border">
-      <div class="project-name  left-align">
-        <h5>{{project.name}}</h5>
-        <!-- <div class="hr-div">
-          <hr size="1px" class="summary-hr">
-        </div> -->
-      </div>
+  <div class=" project-button-background">
 
-      <br>
-      <div class="start-date  right-align">
-      Start Date:  {{project.startdate}}
-      </div>
-    </div>
-  </a>
-  <div class="project-delete-container ">
-    <div class="small-delete-button shadow-effect waves-effect waves-light" ng-click="deleteProject(project.id)">
-      <div class="small-red-image-delete">
-        <img class="small-red-image-delete"src="/images/delete.png" alt="" />
+    <div ng-repeat="project in projects" class="project-button soft-border">
+      <a ui-sref="seeProject({id: project.id})">
+        <div class="view-button right">
+          <!-- <div class="round-button waves-effect waves-light shadow-effect"> -->
+            <img class="arrow"src="/images/arrow.png" alt="" />
+          <!-- </div> -->
+        </div>
+        <div class="project-box shadow-effect soft-border">
+          <div class="project-name  left-align">
+            <h5>{{project.name}}</h5>
+            <!-- <div class="hr-div">
+              <hr size="1px" class="summary-hr">
+            </div> -->
+          </div>
+
+          <br>
+          <div class="start-date  right-align">
+          Start Date:  {{project.startdate}}
+          </div>
+        </div>
+      </a>
+      <div class="project-delete-container ">
+        <div class="small-delete-button shadow-effect waves-effect waves-light" ng-click="deleteProject(project.id)">
+          <div class="small-red-image-delete">
+            <img class="small-red-image-delete"src="/images/delete.png" alt="" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<add-project-directive></add-project-directive>
+  <add-project-directive></add-project-directive>
 </div>

@@ -19,8 +19,11 @@ $softBorder: 0.1875em; //3px;
 $containerWidth: 100%;
 
 //Universal Styles!!!!
-h1,h2,h3,h4,h5,p{
+h1,h2,h3,h4,h5,h6,p{
   font-family: 'Roboto', sans-serif;
+}
+h6{
+  font-size: 1.2rem;
 }
 a:visited{
   text-decoration: none;
@@ -30,7 +33,7 @@ body{
   //  background: $smallBackgroundImage;
   //  background-repeat: no-repeat;
   //  background-size: cover;
-background-color: $darkColor;
+background-color: #6F777F;//$lightColor;
 }
 a{
   text-decoration: none;
@@ -87,14 +90,14 @@ a{
   width: $containerWidth;//21.0625em;//337px;
   height: 4.6875em;//75px;
   background-color: $lightColor;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
+  justify-content: space-between;
   align-items: center;
+  flex-direction: row;
+  margin-top: 3%;
   // margin-left: 1.1875em;//19px;
 }
-.add-project-button-box{
-margin-top: 5%;
-}
+
 .round-button{
   height: 2.3125em; //37px;
   width: 2.3125em; //37px;
@@ -114,11 +117,11 @@ margin-top: 5%;
   color: black;
 
 }
-.soften-background{
-height: 100vh;
-width: 100vw;
-// background-color:rgba(0, 0, 0, 0.5);
-}
+// .soften-background{
+// height: 100vh;
+// width: 100vw;
+// // background-color:rgba(0, 0, 0, 0.5);
+// }
 //NAVIGATION!!!
 .header-wrapper{
   display: flex;
@@ -126,11 +129,12 @@ width: 100vw;
 
 
 .main-header{
-  background-color: $medColor;
+  background-color: $darkColor;
   height: 5.625em;//90px;
   width: 100%;
   display: flex;
   justify-content:space-between;
+  margin-bottom: 3%;
 }
 .b66{
   font-family: $logoFont1;
@@ -204,7 +208,9 @@ letter-spacing: 0.0625em;//1px;
 //Add Project!!!!
 
 
-
+.add-project-button-box{
+// margin-top: 5%;
+}
 .add-project-wrapper{
   width: 100%;
   height: 12.5em;//200px;
@@ -228,22 +234,28 @@ letter-spacing: 0.0625em;//1px;
 
 
 //Project Summaries!!!!
-
-.summary-hr{
-color: black;
-width: 100%;
-
+.project-summaries-content{
+  height: 100%;//36.0625em;//577px;
+  overflow: scroll;
 }
-.hr-div{
-  display: inline-block;
-  width: auto;
-  overflow: hidden;
-  white-space: nowrap;
+
+// .project-button-background{
+//   height: 5.6875em;
+//   width: 100%;
+//   background-color: $darkColor;
+//
+//
+// }
+.project-box{
+  width: $containerWidth;//21.0625em; 337px;
+  height: 4.6875em;//75px;
+  background-color: $lightColor;
+  // margin: 1%;
 }
 .project-button{
   width: 100%;
   height: 13%;
-  margin-top: 5%;
+  // margin-top: 5%;
   // margin-left: 10px;
   // top: 0.4375em;//7px;
 // right: -0.625em;//-10px;
@@ -254,12 +266,7 @@ width: 100%;
   margin-right: 0.375em;//6px;
   margin-top: 0.625em;//10px;
 }
-.project-box{
-  width: $containerWidth;//21.0625em; 337px;
-  height: 4.6875em;//75px;
-  background-color: $lightColor;
-  // margin: 1%;
-}
+
 .project-name{
   color: black;
   position: relative;
@@ -290,21 +297,45 @@ width: 100%;
   width: 6.25em;//100px;
   height: 6.25em;//100px;
   background-color: $lightColor;
-  margin: 0.3125em;//5px;
+  // margin: 0.3125em;//5px;
 }
-.project-summaries-content{
-  height: 36.0625em;//577px;
-  overflow: scroll;
-}
+
 .project-delete-container{
 position: relative;
 top: -2em;//-32px;
 }
 
+
+
 //Project View!!!
 
+
+.project-name-and-dates{
+  width: 100%;
+  height: 17vh;
+  background-color: $darkColor;
+  padding-top: 2.5vh;
+}
+.project-name-and-dates-content{
+  height: 12vh;
+  width: inherit;
+background-color: $lightColor;
+}
+.project-name-top{
+  text-align: center;
+  h4{
+    margin: 0px;
+  }
+}
+.project-start-date-top{
+  text-align: center;
+}
+.project-deadline-top{
+  text-align: center;
+
+}
 .project-content{
-  height: 41.6875em;//667px;
+  height: 100%;//41.6875em;//667px;
   overflow: scroll;
 }
 
@@ -313,6 +344,7 @@ top: -2em;//-32px;
   background-color: $lightColor;
   height: 12.0em;//175px;
   padding: 0.625em;//10px;
+  margin-top: 2%;
 }
 hr{
   color: $darkColor;
@@ -359,6 +391,43 @@ width: 1.875em;//30px;
   margin-top: 0.125em;//2px;
 }
 
+// Add Customer!!!!
+
+
+
+.add-customer-info{
+  width: $containerWidth;//34.375em;//550px;
+  height: 13.5em;//200px;
+  background-color: $lightColor;
+  margin-top: 3%;
+}
+.add-customer-address{
+  // width: 550px;
+  // height: 150px;
+  background-color: $lightColor;
+}
+.red-image-add{
+  height: 3.0625em;//49px;
+  width: 3em;//48px;
+  position: relative;
+  right: 0.28125em;//4.5px;
+  bottom: 0.25em;//4px;
+}
+.round-add-button{
+  height: 2.3125em;//37px;
+  width: 2.3125em;//37px;
+  border-radius: 2.3125em;//37px;
+  background-color: $darkColor;
+  padding-top: 0.1875em;//3px;
+  padding-left: 0.25em;//4px;
+  
+}
+.add-button-box-title{
+  // position: relative;
+  // top: 1.5625em;//25px;
+  // left: 1.25em;//20px;
+}
+
 
 //Invoices on Project page!!
 .invoice-container-wrapper{
@@ -369,13 +438,14 @@ width: 1.875em;//30px;
   flex-wrap: wrap;
   // margin-left: 1.1875em;//19px;
   margin-top: 0.75em;//12px;
-  max-height: 22.15em;//300px;
+  // max-height: 22.15em;//300px;
+  height: 22em;
   overflow: scroll;
 
 }
 .invoice-container{
   min-width: 45%;//158px;
-  height: 6.25em;//100px;
+  height: 8em;//100px;
   background-color: $lightColor;
   margin-top: .625em;//10px;
   display: flex;
@@ -418,43 +488,6 @@ text-align: center;
   height: 1.5375em;
   width: 1.5375em;
 }
-// Add Customer!!!!
-
-
-
-.add-customer-info{
-  width: $containerWidth;//34.375em;//550px;
-  height: 13.5em;//200px;
-  background-color: $lightColor;
-}
-.add-customer-address{
-  // width: 550px;
-  // height: 150px;
-  background-color: $lightColor;
-}
-.red-image-add{
-  height: 3.0625em;//49px;
-  width: 3em;//48px;
-  position: relative;
-  right: 0.28125em;//4.5px;
-  bottom: 0.25em;//4px;
-}
-.round-add-button{
-  height: 2.3125em;//37px;
-  width: 2.3125em;//37px;
-  border-radius: 2.3125em;//37px;
-  background-color: $darkColor;
-  padding-top: 0.1875em;//3px;
-  padding-left: 0.25em;//4px;
-  position: relative;
-  right: 0.3125em;//5px;
-  top: -1em;//-16px;
-}
-.add-button-box-title{
-  position: relative;
-  top: 1.5625em;//25px;
-  left: 1.25em;//20px;
-}
 
 
 // Add Invoice!!!!!!
@@ -477,6 +510,8 @@ text-align: center;
   background-color: $lightColor;
 height: 75%;//3.75em;//60px;
 padding: 0.625em;//10px;
+width: 100%;
+text-align: center;
 }
 .invoice-detail-container{
   background-color: $lightColor;

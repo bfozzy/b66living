@@ -45,15 +45,18 @@ table {
 
 /*dark background color #2F383D*/
 /*light background color #9E9E9E*/
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, h6, p {
   font-family: 'Roboto', sans-serif; }
+
+h6 {
+  font-size: 1.2rem; }
 
 a:visited {
   text-decoration: none;
   text-decoration-color: black; }
 
 body {
-  background-color: #273646; }
+  background-color: #6F777F; }
 
 a {
   text-decoration: none; }
@@ -101,12 +104,11 @@ a {
   width: 100%;
   height: 4.6875em;
   background-color: #E9EEEF;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.add-project-button-box {
-  margin-top: 5%; }
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 3%; }
 
 .round-button {
   height: 2.3125em;
@@ -123,19 +125,16 @@ a {
 .add-project-title {
   color: black; }
 
-.soften-background {
-  height: 100vh;
-  width: 100vw; }
-
 .header-wrapper {
   display: flex; }
 
 .main-header {
-  background-color: #47627F;
+  background-color: #273646;
   height: 5.625em;
   width: 100%;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-bottom: 3%; }
 
 .b66 {
   font-family: "Oxygen", sans-serif;
@@ -206,31 +205,24 @@ a {
 .add-project-title {
   color: black; }
 
-.summary-hr {
-  color: black;
-  width: 100%; }
+.project-summaries-content {
+  height: 100%;
+  overflow: scroll; }
 
-.hr-div {
-  display: inline-block;
-  width: auto;
-  overflow: hidden;
-  white-space: nowrap; }
+.project-box {
+  width: 100%;
+  height: 4.6875em;
+  background-color: #E9EEEF; }
 
 .project-button {
   width: 100%;
-  height: 13%;
-  margin-top: 5%; }
+  height: 13%; }
 
 .view-button {
   height: 3.75em;
   width: 3.75em;
   margin-right: 0.375em;
   margin-top: 0.625em; }
-
-.project-box {
-  width: 100%;
-  height: 4.6875em;
-  background-color: #E9EEEF; }
 
 .project-name {
   color: black;
@@ -257,26 +249,44 @@ a {
 .projectSummaries {
   width: 6.25em;
   height: 6.25em;
-  background-color: #E9EEEF;
-  margin: 0.3125em; }
-
-.project-summaries-content {
-  height: 36.0625em;
-  overflow: scroll; }
+  background-color: #E9EEEF; }
 
 .project-delete-container {
   position: relative;
   top: -2em; }
 
+.project-name-and-dates {
+  width: 100%;
+  height: 17vh;
+  background-color: #273646;
+  padding-top: 2.5vh; }
+
+.project-name-and-dates-content {
+  height: 12vh;
+  width: inherit;
+  background-color: #E9EEEF; }
+
+.project-name-top {
+  text-align: center; }
+  .project-name-top h4 {
+    margin: 0px; }
+
+.project-start-date-top {
+  text-align: center; }
+
+.project-deadline-top {
+  text-align: center; }
+
 .project-content {
-  height: 41.6875em;
+  height: 100%;
   overflow: scroll; }
 
 .customerContainer {
   width: 100%;
   background-color: #E9EEEF;
   height: 12.0em;
-  padding: 0.625em; }
+  padding: 0.625em;
+  margin-top: 2%; }
 
 hr {
   color: #273646; }
@@ -317,6 +327,30 @@ hr {
   margin-left: 0.125em;
   margin-top: 0.125em; }
 
+.add-customer-info {
+  width: 100%;
+  height: 13.5em;
+  background-color: #E9EEEF;
+  margin-top: 3%; }
+
+.add-customer-address {
+  background-color: #E9EEEF; }
+
+.red-image-add {
+  height: 3.0625em;
+  width: 3em;
+  position: relative;
+  right: 0.28125em;
+  bottom: 0.25em; }
+
+.round-add-button {
+  height: 2.3125em;
+  width: 2.3125em;
+  border-radius: 2.3125em;
+  background-color: #273646;
+  padding-top: 0.1875em;
+  padding-left: 0.25em; }
+
 .invoice-container-wrapper {
   background-color: #273646;
   width: 100%;
@@ -324,12 +358,12 @@ hr {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 0.75em;
-  max-height: 22.15em;
+  height: 22em;
   overflow: scroll; }
 
 .invoice-container {
   min-width: 45%;
-  height: 6.25em;
+  height: 8em;
   background-color: #E9EEEF;
   margin-top: .625em;
   display: flex;
@@ -369,37 +403,6 @@ hr {
   height: 1.5375em;
   width: 1.5375em; }
 
-.add-customer-info {
-  width: 100%;
-  height: 13.5em;
-  background-color: #E9EEEF; }
-
-.add-customer-address {
-  background-color: #E9EEEF; }
-
-.red-image-add {
-  height: 3.0625em;
-  width: 3em;
-  position: relative;
-  right: 0.28125em;
-  bottom: 0.25em; }
-
-.round-add-button {
-  height: 2.3125em;
-  width: 2.3125em;
-  border-radius: 2.3125em;
-  background-color: #273646;
-  padding-top: 0.1875em;
-  padding-left: 0.25em;
-  position: relative;
-  right: 0.3125em;
-  top: -1em; }
-
-.add-button-box-title {
-  position: relative;
-  top: 1.5625em;
-  left: 1.25em; }
-
 .round-add-invoice-button {
   height: 2.3125em;
   width: 2.3125em;
@@ -415,7 +418,9 @@ hr {
 .invoice-detail-title {
   background-color: #E9EEEF;
   height: 75%;
-  padding: 0.625em; }
+  padding: 0.625em;
+  width: 100%;
+  text-align: center; }
 
 .invoice-detail-container {
   background-color: #E9EEEF;

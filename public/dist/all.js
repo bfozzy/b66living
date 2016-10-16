@@ -204,7 +204,7 @@ angular.module("b66Living").directive("navBar", function () {
         mainService.getProject($stateParams.id).then(function (res) {
 
           //  console.log("if statement works");
-          $scope.navProjectName = res.data[0].project_name;
+          $scope.navProjectName = "< Back";
         });
       } else {
         $scope.navProjectName = 'Projects';

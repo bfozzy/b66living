@@ -41,8 +41,13 @@ createNewProduct: function(req, res){
       res.status(400).json(err);
     }
     else {
-      res.status(200).json("Invoice Added");
+      res.status(200).json("Product Added");
     }
+    // console.log(req.params.invoiceId);
+    // console.log(req.body.description);
+    // console.log(req.body.wholesale);
+    // console.log(req.body.retail);
+    // console.log(req.body.tax);
   });
 },
   //GET Functions

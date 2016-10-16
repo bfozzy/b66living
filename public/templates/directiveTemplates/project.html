@@ -13,7 +13,7 @@
 </div>
 
 
-    <div class="customerContainer shadow-effect container soft-border"ng-repeat="project in project">
+    <div class="customerContainer shadow-effect soft-border"ng-repeat="project in project">
       <div class="row">
         <div class="containerTitle center-align col s12">
           <h5>Customer Information</h5>
@@ -69,24 +69,26 @@
         <h4>Invoices</h4>
       </div>
       <div ng-repeat="invoice in invoices"class="invoice-container darker-shadow-effect soft-border">
+        <div class="invoice-delete-container "ng-click="deleteInvoice(invoice.invoice_id)">
+          <div class="small-delete-button shadow-effect waves-effect waves-light">
+            <div class="small-red-image-delete">
+              <img class="small-red-image-delete"src="/images/delete.png" alt="" />
+            </div>
+          </div>
+        </div>
+      <div class="invoice-period-description">
         <a ui-sref="seeInvoice({id: projectId, invoiceId: invoice.invoice_id})">
         <div class="invoice-period">
           <div class="invoice-period-text">
             <i class="material-icons">today</i>
             {{invoice.invoice_period}}
-          <div class="invoice-delete-container "ng-click="deleteInvoice(invoice.invoice_id)">
-            <div class="small-delete-button shadow-effect waves-effect waves-light">
-              <div class="small-red-image-delete">
-                <img class="small-red-image-delete"src="/images/delete.png" alt="" />
-              </div>
-            </div>
-          </div>
-
           </div>
         </div>
         <div class="invoice-description">
           <div class="invoice-description-text">{{invoice.invoice_description}}</div>
         </div>
+      </div>
+
       </a>
       </div>
     </div>

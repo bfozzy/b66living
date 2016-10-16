@@ -19,7 +19,7 @@ var projectCtrl = require("./nodeControllers/projectCtrl.js");
 app.post("/admin/project/new", projectCtrl.createNewProject);
 app.post("/admin/project/:id/customer/new", projectCtrl.createNewCustomer);
 app.post("/admin/project/:id/invoice/new", projectCtrl.createNewInvoice);
-app.post("admin/project/invoice/:invoiceId", projectCtrl.createNewProduct);
+app.post("/admin/project/invoice/:invoiceId", projectCtrl.createNewProduct);
 
 //GET Endpoints!
 app.get("/admin/projects", projectCtrl.getProjects);

@@ -9,38 +9,48 @@ angular.module("b66Living")
 
 
         },
-        controller: function($scope, mainService, $stateParams){
-          mainService.getProducts($stateParams.id, $stateParams.invoiceId).then(function(res){
+        controller: function controller($scope, mainService, $stateParams, $state) {
+          mainService.getProducts($stateParams.id, $stateParams.invoiceId).then(function (res) {
             $scope.products = res.data;
-            console.log(res.data);
+            var productLength = $scope.products.length;
+            $scope.productIndex = [];
+            $scope.invoiceTotal = 0;
+console.log($scope.products);
+            for (var i = 0; i < productLength; i++) {
+              var retail = Number($scope.products[i].retail);
+              var tax = Number($scope.products[i].tax) * retail;
+              var subtot = (retail +  tax);
+              // subtot += Number(res.data[i])
+              // console.log(retail);
+              // console.log(tax);
+              // console.log(subtot);
+
+
+              $scope.products[i].productIndex=(i + 1);
+              $scope.products[i].subtotal =subtot.toFixed(2);
+              $scope.invoiceTotal += Number($scope.products[i].subtotal);
+              console.log($scope.invoiceTotal);
+              // $scope.productSubtotal = subtot;
+            }
+            console.log($scope.products);
+
           });
 
-          var productIndex = function(){
-            var productLength = res.data.length;
-            for (var i = 0; i < productLength; i++){
-              var subtot = 0;
-            // subtot += Number(res.data[i])
-            // console.log(i);
-              $scope.index = i+1;
-              $scope.productSubtotal = subtot;
-            }
-          };// End of productIndex
 
-          productIndex();
-          // console.log($stateParams);
-          $scope.addProduct = function(productDescription, productWholesale,productRetail,productTax){
-          var newProduct = {
-            description: productDescription,
-            wholesale: productWholesale,
-            retail: productRetail,
-            tax: productTax
-          };
-          mainService.addProduct($stateParams.invoiceId, newProduct).then(function(res){
-              if (res === 200){
+          $scope.addProduct = function (productDescription, productWholesale, productRetail, productTax) {
+            var newProduct = {
+              description: productDescription,
+              wholesale: productWholesale,
+              retail: productRetail,
+              tax: productTax
+            };
+            mainService.addProduct($stateParams.invoiceId, newProduct).then(function (res) {
+              if (res.status === 200) {
                 swal("Product Added!");
+                $state.reload();
               }
             });
-          };//End of addProduct
-        }//End of Controller
+          }; //End of addProduct
+        } //End of Controller
       };//End of directive return statement
     });//End of directive

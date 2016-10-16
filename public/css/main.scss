@@ -2,18 +2,21 @@
 /*light background color #9E9E9E*/
 @import 'https://fonts.googleapis.com/css?family=Comfortaa|Courgette|Oxygen|Roboto';// @import 'https://fonts.googleapis.com/css?family=Courgette';
 
+//default pixel size 16px
 
 // VARIABLES!!!
-$darkColor: #2F383D;
-$lightColor: #949394;
-$mainAccentColor: #A6F284;
-$importantAccentColor: #FF0000;
-$smallBackgroundImage: url("../images/small.jpg");
+$darkColor: #273646;
+$medColor: #47627F;
+$lightColor: #E9EEEF;
+$mainAccentColor: #229C8F;
+$importantAccentColor: #E44235;
+$smallBackgroundImage: url("../images/tree.jpg");
 // $mediumBackgroundImage: "";
 // $largeBackgroundImage: "";
 $logoFont1: 'Oxygen', sans-serif;
 $logoFont2: 'Courgette', cursive;
-$softBorder: 3px;
+$softBorder: 0.1875em; //3px;
+$containerWidth: 100%;
 
 //Universal Styles!!!!
 h1,h2,h3,h4,h5,p{
@@ -24,20 +27,27 @@ a:visited{
   text-decoration-color: black;
 }
 body{
-   background: $smallBackgroundImage;
-
+  //  background: $smallBackgroundImage;
+  //  background-repeat: no-repeat;
+  //  background-size: cover;
+background-color: $darkColor;
 }
 a{
   text-decoration: none;
 }
+.shaded{
+  background-color:rgba(36, 49, 64, 0.3);
+
+}
+
 .soft-border{
-  border-radius: $softBorder;
+  // border-radius: $softBorder;
 }
 .shadow-effect{
-  box-shadow: -2px 2px 6px $darkColor;
+  box-shadow: -1px 2px 6px $darkColor;
 }
 .darker-shadow-effect{
-  box-shadow: -2px 2px 6px black;
+  // box-shadow: -0.125em 0.125em 0.375em//-2px 2px 6px black;
 }
 .input-field label{
   color: black;
@@ -55,18 +65,18 @@ a{
 }
     /* label underline focus color */
 .input-field input[type=text]:focus {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
+  border-bottom: 0.0625em solid #000; //1px
+  box-shadow: 0 0.0625em 0 0 #000; //1px
 }
     /* valid color */
 .input-field input[type=text].valid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
+  border-bottom: 0.0625em solid #000; //1px
+  box-shadow: 0 0.0625em 0 0 #000; //1px
 }
     /* invalid color */
 .input-field input[type=text].invalid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
+  border-bottom: 0.0625em solid #000; //1px
+  box-shadow: 0 0.0625em 0 0 #000; //1px
 }
     /* icon prefix focus color */
 .input-field .prefix.active {
@@ -74,22 +84,31 @@ a{
 }
 
 .add-button-box{
-  width: 337px;
-  height: 75px;
+  width: $containerWidth;//21.0625em;//337px;
+  height: 4.6875em;//75px;
   background-color: $lightColor;
-  margin-left: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-left: 1.1875em;//19px;
+}
+.add-project-button-box{
+margin-top: 5%;
 }
 .round-button{
-  height: 37px;
-  width: 37px;
-  border-radius: 37px;
+  height: 2.3125em; //37px;
+  width: 2.3125em; //37px;
+  border-radius: 2.3125em; //37px;
   background-color: $darkColor;
-  padding-top: 3px;
-  padding-left: 4px;
+  padding-top: 0.1875em; //3px;
+  padding-left: 0.25em; //4px;
 }
 .add-project-round-button{
-  margin-right: -22px;
-  margin-top: -24px;
+  // margin-right: -1.375em;//-22px;
+  // margin-top: -1.5em;//-24px;
+  // align-self: flex-end;
+  position: relative;
+  right: -28%;
 }
 .add-project-title{
   color: black;
@@ -98,7 +117,7 @@ a{
 .soften-background{
 height: 100vh;
 width: 100vw;
-background-color:rgba(0, 0, 0, 0.5);
+// background-color:rgba(0, 0, 0, 0.5);
 }
 //NAVIGATION!!!
 .header-wrapper{
@@ -107,40 +126,40 @@ background-color:rgba(0, 0, 0, 0.5);
 
 
 .main-header{
-  background-color: $darkColor;
-  height: 90px;
+  background-color: $medColor;
+  height: 5.625em;//90px;
   width: 100%;
   display: flex;
   justify-content:space-between;
 }
 .b66{
   font-family: $logoFont1;
-  font-size: 24px;
-  color: $darkColor;
+  font-size: 1.5em;//24px;
+  color: $lightColor;
 }
 .living{
   font-family: $logoFont2;
-  font-size: 24px;
-  color: $darkColor;
+  font-size: 1.5em;//24px;
+  color: $lightColor;
 
 }
 .companyLogo{
-  width: 75px;
-  height: 75px;
-  border-radius: 100px;
+  width: 4.6875em;//75px;
+  height: 4.6875em;//75px;
+  border-radius: 6.25em;//100px;
   background-color: $mainAccentColor;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 5px;
-  margin-top: 6px;
+  margin-left: 0.3125em;//5px;
+  margin-top: 0.375em;//6px;
 }
 .navProjectName{
-width: 157px;
-height: 65px;
-margin-right: 30px;
-margin-top: 12px;
+width: 9.8125em;//157px;
+height: 100%;//65px;
+// margin-right: 1.875em;//30px;
+// margin-top: 0.75em;//12px;
 z-index: 2;
 background-color: $lightColor;
 display: flex;
@@ -160,18 +179,25 @@ justify-content: center;
 
 //Home Template!!!!
 .quote-container{
-  width: 90%;
+  width: 100%;
   height: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.quote{
+  width: 80%;
 }
 .author h5{
   font-family: 'Comfortaa', cursive;
   font-weight: 300;
-  letter-spacing: .5px;
+  letter-spacing: 0.03125em;//.5px;
 
 }
-.quote h5{
+.quote h4{
+  font-size: 2.0rem;
 font-family: 'Roboto', sans-serif;
-letter-spacing: 1px;
+letter-spacing: 0.0625em;//1px;
 
 }
 
@@ -181,14 +207,14 @@ letter-spacing: 1px;
 
 .add-project-wrapper{
   width: 100%;
-  height: 200px;
-  margin: 10px;
+  height: 12.5em;//200px;
+  // margin: 0.625em;//10px;
 }
 .add-project-box{
-  width: 90%;
+  width: $containerWidth;
   height: 100%;
   background-color: $lightColor;
-  margin: 1%;
+  // margin: 1%;
 }
 .add-project-title{
   color: black;
@@ -197,7 +223,7 @@ letter-spacing: 1px;
 
 }
 .add-project-button-wrapper{
-  margin: -5px;
+  // margin: -0.3125em;//-5px;
 }
 
 
@@ -216,177 +242,189 @@ width: 100%;
 }
 .project-button{
   width: 100%;
-  height: 100px;
-  margin-left: 10px;
-  top: 7px;
-right: -10px;
+  height: 13%;
+  margin-top: 5%;
+  // margin-left: 10px;
+  // top: 0.4375em;//7px;
+// right: -0.625em;//-10px;
 }
 .view-button{
-  height: 60px;
-  width: 60px;
-  margin-right: 6px;
-  margin-top: 10px;
+  height: 3.75em;//60px;
+  width: 3.75em;//60px;
+  margin-right: 0.375em;//6px;
+  margin-top: 0.625em;//10px;
 }
 .project-box{
-  width: 337px;
-  height: 75px;
+  width: $containerWidth;//21.0625em; 337px;
+  height: 4.6875em;//75px;
   background-color: $lightColor;
-  margin: 1%;
+  // margin: 1%;
 }
 .project-name{
   color: black;
   position: relative;
-  top: 0px;
-  left: 5px;
+  top: 0em;//0px;
+  left: 0.3125em;//5px;
   width: auto;
   display: inline-block;
 }
 .start-date{
   color: $mainAccentColor;
-  font-size: 16px;
+  font-size: 1em;//16px;
   position: relative;
-  top: 0px;
-  right: 10px;
-  margin-right: 5px;
+  top: 0em;//0px;
+  right: 0.625em;//10px;
+  margin-right: 0.3125em;//5px;
 
 }
 .arrow{
-  width: 50px;
-  height: 50px;
-  bottom: 9px;
-  right: 9px;
+  width: 5.125em;//50px;
+  height: 5.125em;//50px;
+  // bottom: 0.5625em;//9px;
+  // right: 0.5625em;//9px;
+  position: relative;
+  bottom: 20%;
 }
 
 .projectSummaries{
-  width: 100px;
-  height: 100px;
+  width: 6.25em;//100px;
+  height: 6.25em;//100px;
   background-color: $lightColor;
-  margin: 5px;
+  margin: 0.3125em;//5px;
 }
 .project-summaries-content{
-  height: 577px;
+  height: 36.0625em;//577px;
   overflow: scroll;
 }
 .project-delete-container{
 position: relative;
-top: -32px;
+top: -2em;//-32px;
 }
 
 //Project View!!!
 
 .project-content{
-  height: 667px;
+  height: 41.6875em;//667px;
   overflow: scroll;
 }
 
 .customerContainer{
+  width: $containerWidth;
   background-color: $lightColor;
-  height: 175px;
-  padding: 10px;
+  height: 12.0em;//175px;
+  padding: 0.625em;//10px;
 }
 hr{
   color: $darkColor;
 }
 .editButton{
-  margin-right: 5px;
+  margin-right: 0.3125em;//5px;
 }
 
 
 .save-customer-button{
-  margin-right: 32px;
+  margin-right: 2em;//32px;
 
 }
 .round-delete-button{
-  height: 37px;
-  width: 37px;
-  border-radius: 37px;
+  height: 2.3125em;//37px;
+  width: 2.3125em;//37px;
+  border-radius: 2.3125em;//37px;
   background-color: $darkColor;
-  padding-top: 3px;
-  padding-left: 4px;
-  margin-right: 5px;
+  padding-top: 0.1875em;//3px;
+  padding-left: 0.25em;//4px;
+  margin-right: 0.3125em;//5px;
 
 }
 .red-image-delete{
-  height: 30px;
-width: 30px;
+  height: 1.875em;//30px;
+width: 1.875em;//30px;
 }
 .small-button-container{
   justify-content: flex-end;
 }
 .small-delete-button{
-  height: 23px;
-  width: 23px;
+  height: 1.4375em;//23px;
+  width: 1.4375em;//23px;
   border-radius: 17px;
   background-color: $darkColor;
   align-self: flex-end;
-  margin-left: 10px;
+  margin: 5px;
 
 }
 .small-red-image-delete{
-  height: 17px;
-  width: 17px;
-  margin-left: 2px;
-  margin-top: 2px;
+  height: 1.0625em;//17px;
+  width: 1.0625em;//17px;
+  margin-left: 0.125em;//2px;
+  margin-top: 0.125em;//2px;
 }
 
 
 //Invoices on Project page!!
 .invoice-container-wrapper{
   background-color: $darkColor;
-  width: 337px;
+  width: $containerWidth;//21.0625em;//337px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-left: 19px;
-  margin-top: 12px;
-  max-height: 300px;
+  // margin-left: 1.1875em;//19px;
+  margin-top: 0.75em;//12px;
+  max-height: 22.15em;//300px;
   overflow: scroll;
 
 }
 .invoice-container{
-  min-width: 158px;
-  height: 100px;
+  min-width: 45%;//158px;
+  height: 6.25em;//100px;
   background-color: $lightColor;
-  margin-top: 10px;
+  margin-top: .625em;//10px;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  // align-items: center;
 }
 .invoices-section-title{
   color: white;
-  margin: 0px;
-  height: 50px;
+  margin: 0em;//0px;
+  height: 3.125em;//50px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
+.invoice-period-description{
+  align-self: center;
+    margin-left: 11%;
+}
 .invoice-period{
   display: flex;
   justify-content: space-around;
+  margin-bottom: 5%;
+  margin-top: 10%;
 }
 .invoice-period-text{
-  font-size: 20px;
-  color: $mainAccentColor;
+  font-size: 1.25em;//20px;
+  color: $importantAccentColor;
   display: inherit;
   justify-content: space-around;
-  margin-left: 15px;
+  // margin-left: 0.9375em;//15px;
 }
 .invoice-description-text{
-font-size: 20px;
+font-size: 1.25em;//20px;
 color: $darkColor;
-
+text-align: center;
 }
 .invoice-delete-container{
-  margin-left: 5px;
+  // margin-left: 0.3125em;//5px;
+  height: 1.5375em;
+  width: 1.5375em;
 }
 // Add Customer!!!!
 
 
 
 .add-customer-info{
-  width: 550px;
-  height: 200px;
+  width: $containerWidth;//34.375em;//550px;
+  height: 13.5em;//200px;
   background-color: $lightColor;
 }
 .add-customer-address{
@@ -395,40 +433,114 @@ color: $darkColor;
   background-color: $lightColor;
 }
 .red-image-add{
-  height: 49px;
-  width: 48px;
+  height: 3.0625em;//49px;
+  width: 3em;//48px;
   position: relative;
-  right: 4.5px;
-  bottom: 4px;
+  right: 0.28125em;//4.5px;
+  bottom: 0.25em;//4px;
 }
 .round-add-button{
-  height: 37px;
-  width: 37px;
-  border-radius: 37px;
+  height: 2.3125em;//37px;
+  width: 2.3125em;//37px;
+  border-radius: 2.3125em;//37px;
   background-color: $darkColor;
-  padding-top: 3px;
-  padding-left: 4px;
+  padding-top: 0.1875em;//3px;
+  padding-left: 0.25em;//4px;
   position: relative;
-  right: 5px;
-  top: -16px;
+  right: 0.3125em;//5px;
+  top: -1em;//-16px;
 }
 .add-button-box-title{
   position: relative;
-  top: 25px;
-  left: 20px;
+  top: 1.5625em;//25px;
+  left: 1.25em;//20px;
 }
 
 
 // Add Invoice!!!!!!
 
 .round-add-invoice-button{
-  height: 37px;
-  width: 37px;
-  border-radius: 37px;
+  height: 2.3125em;//37px;
+  width: 2.3125em;//37px;
+  border-radius: 2.3125em;//37px;
   background-color: $darkColor;
 }
 .addInvoice{
-  width: 550px;
-  height: 200px;
+  width: 100%;//550px;
+  max-width: 100%;
+  height: 12.5em;//200px;
   background-color: $lightColor;
+}
+
+//Invoice Details Display!!!!!
+.invoice-detail-title{
+  background-color: $lightColor;
+height: 75%;//3.75em;//60px;
+padding: 0.625em;//10px;
+}
+.invoice-detail-container{
+  background-color: $lightColor;
+  max-height: 75%;//400px;
+  margin-top: 2%;
+  overflow: scroll;
+  width: $containerWidth;
+  display: flex;
+  flex-direction: column;
+}
+.invoice-detail-wrapper{
+  // This will only affect .invoice-column-titles and .invoice-column-details
+
+}
+.invoice-column-titles{
+  display: inline-flex;
+  margin-bottom: 2%;
+  width: 100%;
+  justify-content: space-between;
+
+}
+.invoice-column-details{
+  display: inline-flex;
+  // margin-bottom: 2%;
+  width: 100%;
+  height: 2.1875em;
+  // border: 2px;
+  // border-color: $darkColor;
+  // border-style: solid;
+  justify-content: space-between;
+  align-items: center;
+}
+.invoice-detail-container{
+
+}
+.invoice-header{
+display: flex;
+justify-content: center;
+
+}
+
+
+
+.invoice-item-number{
+  width: 1.2em;
+  margin-left: 2%;
+
+}
+.invoice-item-price{
+  width: 5.2em;
+}
+.invoice-item-tax{
+  width: 3.2em;
+}
+.invoice-item-description{
+  width: 6em;
+}
+.invoice-footer{
+  display: flex;
+  justify-content: flex-end;
+}
+.invoice-total{
+  width: 100%;
+  text-align: right;
+  margin-top: 2%;
+  margin-right: 2%;
 }

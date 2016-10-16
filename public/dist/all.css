@@ -53,25 +53,22 @@ a:visited {
   text-decoration-color: black; }
 
 body {
-  background: url("../images/small.jpg"); }
+  background-color: #273646; }
 
 a {
   text-decoration: none; }
 
-.soft-border {
-  border-radius: 3px; }
+.shaded {
+  background-color: rgba(36, 49, 64, 0.3); }
 
 .shadow-effect {
-  box-shadow: -2px 2px 6px #2F383D; }
-
-.darker-shadow-effect {
-  box-shadow: -2px 2px 6px black; }
+  box-shadow: -1px 2px 6px #273646; }
 
 .input-field label {
   color: black; }
 
 .input-field input[type=text]:focus + label {
-  color: #A6F284; }
+  color: #229C8F; }
 
 /* label color */
 .input-field label {
@@ -83,88 +80,90 @@ a {
 
 /* label underline focus color */
 .input-field input[type=text]:focus {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000; }
+  border-bottom: 0.0625em solid #000;
+  box-shadow: 0 0.0625em 0 0 #000; }
 
 /* valid color */
 .input-field input[type=text].valid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000; }
+  border-bottom: 0.0625em solid #000;
+  box-shadow: 0 0.0625em 0 0 #000; }
 
 /* invalid color */
 .input-field input[type=text].invalid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000; }
+  border-bottom: 0.0625em solid #000;
+  box-shadow: 0 0.0625em 0 0 #000; }
 
 /* icon prefix focus color */
 .input-field .prefix.active {
   color: #000; }
 
 .add-button-box {
-  width: 337px;
-  height: 75px;
-  background-color: #949394;
-  margin-left: 19px; }
+  width: 100%;
+  height: 4.6875em;
+  background-color: #E9EEEF;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.add-project-button-box {
+  margin-top: 5%; }
 
 .round-button {
-  height: 37px;
-  width: 37px;
-  border-radius: 37px;
-  background-color: #2F383D;
-  padding-top: 3px;
-  padding-left: 4px; }
+  height: 2.3125em;
+  width: 2.3125em;
+  border-radius: 2.3125em;
+  background-color: #273646;
+  padding-top: 0.1875em;
+  padding-left: 0.25em; }
 
 .add-project-round-button {
-  margin-right: -22px;
-  margin-top: -24px; }
+  position: relative;
+  right: -28%; }
 
 .add-project-title {
   color: black; }
 
 .soften-background {
   height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5); }
+  width: 100vw; }
 
 .header-wrapper {
   display: flex; }
 
 .main-header {
-  background-color: #2F383D;
-  height: 90px;
+  background-color: #47627F;
+  height: 5.625em;
   width: 100%;
   display: flex;
   justify-content: space-between; }
 
 .b66 {
   font-family: "Oxygen", sans-serif;
-  font-size: 24px;
-  color: #2F383D; }
+  font-size: 1.5em;
+  color: #E9EEEF; }
 
 .living {
   font-family: "Courgette", cursive;
-  font-size: 24px;
-  color: #2F383D; }
+  font-size: 1.5em;
+  color: #E9EEEF; }
 
 .companyLogo {
-  width: 75px;
-  height: 75px;
-  border-radius: 100px;
-  background-color: #A6F284;
+  width: 4.6875em;
+  height: 4.6875em;
+  border-radius: 6.25em;
+  background-color: #229C8F;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 5px;
-  margin-top: 6px; }
+  margin-left: 0.3125em;
+  margin-top: 0.375em; }
 
 .navProjectName {
-  width: 157px;
-  height: 65px;
-  margin-right: 30px;
-  margin-top: 12px;
+  width: 9.8125em;
+  height: 100%;
   z-index: 2;
-  background-color: #949394;
+  background-color: #E9EEEF;
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -176,34 +175,36 @@ a {
   color: black; }
 
 .quote-container {
-  width: 90%;
-  height: 65%; }
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.quote {
+  width: 80%; }
 
 .author h5 {
   font-family: 'Comfortaa', cursive;
   font-weight: 300;
-  letter-spacing: .5px; }
+  letter-spacing: 0.03125em; }
 
-.quote h5 {
+.quote h4 {
+  font-size: 2.0rem;
   font-family: 'Roboto', sans-serif;
-  letter-spacing: 1px; }
+  letter-spacing: 0.0625em; }
 
 .add-project-wrapper {
   width: 100%;
-  height: 200px;
-  margin: 10px; }
+  height: 12.5em; }
 
 .add-project-box {
-  width: 90%;
+  width: 100%;
   height: 100%;
-  background-color: #949394;
-  margin: 1%; }
+  background-color: #E9EEEF; }
 
 .add-project-title {
   color: black; }
-
-.add-project-button-wrapper {
-  margin: -5px; }
 
 .summary-hr {
   color: black;
@@ -217,192 +218,250 @@ a {
 
 .project-button {
   width: 100%;
-  height: 100px;
-  margin-left: 10px;
-  top: 7px;
-  right: -10px; }
+  height: 13%;
+  margin-top: 5%; }
 
 .view-button {
-  height: 60px;
-  width: 60px;
-  margin-right: 6px;
-  margin-top: 10px; }
+  height: 3.75em;
+  width: 3.75em;
+  margin-right: 0.375em;
+  margin-top: 0.625em; }
 
 .project-box {
-  width: 337px;
-  height: 75px;
-  background-color: #949394;
-  margin: 1%; }
+  width: 100%;
+  height: 4.6875em;
+  background-color: #E9EEEF; }
 
 .project-name {
   color: black;
   position: relative;
-  top: 0px;
-  left: 5px;
+  top: 0em;
+  left: 0.3125em;
   width: auto;
   display: inline-block; }
 
 .start-date {
-  color: #A6F284;
-  font-size: 16px;
+  color: #229C8F;
+  font-size: 1em;
   position: relative;
-  top: 0px;
-  right: 10px;
-  margin-right: 5px; }
+  top: 0em;
+  right: 0.625em;
+  margin-right: 0.3125em; }
 
 .arrow {
-  width: 50px;
-  height: 50px;
-  bottom: 9px;
-  right: 9px; }
+  width: 5.125em;
+  height: 5.125em;
+  position: relative;
+  bottom: 20%; }
 
 .projectSummaries {
-  width: 100px;
-  height: 100px;
-  background-color: #949394;
-  margin: 5px; }
+  width: 6.25em;
+  height: 6.25em;
+  background-color: #E9EEEF;
+  margin: 0.3125em; }
 
 .project-summaries-content {
-  height: 577px;
+  height: 36.0625em;
   overflow: scroll; }
 
 .project-delete-container {
   position: relative;
-  top: -32px; }
+  top: -2em; }
 
 .project-content {
-  height: 667px;
+  height: 41.6875em;
   overflow: scroll; }
 
 .customerContainer {
-  background-color: #949394;
-  height: 175px;
-  padding: 10px; }
+  width: 100%;
+  background-color: #E9EEEF;
+  height: 12.0em;
+  padding: 0.625em; }
 
 hr {
-  color: #2F383D; }
+  color: #273646; }
 
 .editButton {
-  margin-right: 5px; }
+  margin-right: 0.3125em; }
 
 .save-customer-button {
-  margin-right: 32px; }
+  margin-right: 2em; }
 
 .round-delete-button {
-  height: 37px;
-  width: 37px;
-  border-radius: 37px;
-  background-color: #2F383D;
-  padding-top: 3px;
-  padding-left: 4px;
-  margin-right: 5px; }
+  height: 2.3125em;
+  width: 2.3125em;
+  border-radius: 2.3125em;
+  background-color: #273646;
+  padding-top: 0.1875em;
+  padding-left: 0.25em;
+  margin-right: 0.3125em; }
 
 .red-image-delete {
-  height: 30px;
-  width: 30px; }
+  height: 1.875em;
+  width: 1.875em; }
 
 .small-button-container {
   justify-content: flex-end; }
 
 .small-delete-button {
-  height: 23px;
-  width: 23px;
+  height: 1.4375em;
+  width: 1.4375em;
   border-radius: 17px;
-  background-color: #2F383D;
+  background-color: #273646;
   align-self: flex-end;
-  margin-left: 10px; }
+  margin: 5px; }
 
 .small-red-image-delete {
-  height: 17px;
-  width: 17px;
-  margin-left: 2px;
-  margin-top: 2px; }
+  height: 1.0625em;
+  width: 1.0625em;
+  margin-left: 0.125em;
+  margin-top: 0.125em; }
 
 .invoice-container-wrapper {
-  background-color: #2F383D;
-  width: 337px;
+  background-color: #273646;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-left: 19px;
-  margin-top: 12px;
-  max-height: 300px;
+  margin-top: 0.75em;
+  max-height: 22.15em;
   overflow: scroll; }
 
 .invoice-container {
-  min-width: 158px;
-  height: 100px;
-  background-color: #949394;
-  margin-top: 10px;
+  min-width: 45%;
+  height: 6.25em;
+  background-color: #E9EEEF;
+  margin-top: .625em;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center; }
+  justify-content: flex-start;
+  flex-direction: row; }
 
 .invoices-section-title {
   color: white;
-  margin: 0px;
-  height: 50px;
+  margin: 0em;
+  height: 3.125em;
   width: 100%;
   display: flex;
   justify-content: center; }
 
+.invoice-period-description {
+  align-self: center;
+  margin-left: 11%; }
+
 .invoice-period {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-bottom: 5%;
+  margin-top: 10%; }
 
 .invoice-period-text {
-  font-size: 20px;
-  color: #A6F284;
+  font-size: 1.25em;
+  color: #E44235;
   display: inherit;
-  justify-content: space-around;
-  margin-left: 15px; }
+  justify-content: space-around; }
 
 .invoice-description-text {
-  font-size: 20px;
-  color: #2F383D; }
+  font-size: 1.25em;
+  color: #273646;
+  text-align: center; }
 
 .invoice-delete-container {
-  margin-left: 5px; }
+  height: 1.5375em;
+  width: 1.5375em; }
 
 .add-customer-info {
-  width: 550px;
-  height: 200px;
-  background-color: #949394; }
+  width: 100%;
+  height: 13.5em;
+  background-color: #E9EEEF; }
 
 .add-customer-address {
-  background-color: #949394; }
+  background-color: #E9EEEF; }
 
 .red-image-add {
-  height: 49px;
-  width: 48px;
+  height: 3.0625em;
+  width: 3em;
   position: relative;
-  right: 4.5px;
-  bottom: 4px; }
+  right: 0.28125em;
+  bottom: 0.25em; }
 
 .round-add-button {
-  height: 37px;
-  width: 37px;
-  border-radius: 37px;
-  background-color: #2F383D;
-  padding-top: 3px;
-  padding-left: 4px;
+  height: 2.3125em;
+  width: 2.3125em;
+  border-radius: 2.3125em;
+  background-color: #273646;
+  padding-top: 0.1875em;
+  padding-left: 0.25em;
   position: relative;
-  right: 5px;
-  top: -16px; }
+  right: 0.3125em;
+  top: -1em; }
 
 .add-button-box-title {
   position: relative;
-  top: 25px;
-  left: 20px; }
+  top: 1.5625em;
+  left: 1.25em; }
 
 .round-add-invoice-button {
-  height: 37px;
-  width: 37px;
-  border-radius: 37px;
-  background-color: #2F383D; }
+  height: 2.3125em;
+  width: 2.3125em;
+  border-radius: 2.3125em;
+  background-color: #273646; }
 
 .addInvoice {
-  width: 550px;
-  height: 200px;
-  background-color: #949394; }
+  width: 100%;
+  max-width: 100%;
+  height: 12.5em;
+  background-color: #E9EEEF; }
+
+.invoice-detail-title {
+  background-color: #E9EEEF;
+  height: 75%;
+  padding: 0.625em; }
+
+.invoice-detail-container {
+  background-color: #E9EEEF;
+  max-height: 75%;
+  margin-top: 2%;
+  overflow: scroll;
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.invoice-column-titles {
+  display: inline-flex;
+  margin-bottom: 2%;
+  width: 100%;
+  justify-content: space-between; }
+
+.invoice-column-details {
+  display: inline-flex;
+  width: 100%;
+  height: 2.1875em;
+  justify-content: space-between;
+  align-items: center; }
+
+.invoice-header {
+  display: flex;
+  justify-content: center; }
+
+.invoice-item-number {
+  width: 1.2em;
+  margin-left: 2%; }
+
+.invoice-item-price {
+  width: 5.2em; }
+
+.invoice-item-tax {
+  width: 3.2em; }
+
+.invoice-item-description {
+  width: 6em; }
+
+.invoice-footer {
+  display: flex;
+  justify-content: flex-end; }
+
+.invoice-total {
+  width: 100%;
+  text-align: right;
+  margin-top: 2%;
+  margin-right: 2%; }

@@ -2,7 +2,7 @@
 
 
 <!-- Invoice Display!!!! -->
-<div class="customerContainer shadow-effect container soft-border">
+<!-- <div class="customerContainer shadow-effect container soft-border">
     <div ng-repeat="product in products" class="row">
       <div class="containerTitle center-align col s12">
         <h5>Invoice Information</h5>
@@ -32,34 +32,41 @@
       </div>
 
     </div>
+  </div> -->
+<div class="invoice-detail-container shadow-effect soft-border">
+  <div class="invoice-header">
+    <div class="invoice-detail-title"><h4>Invoice Information</h4><hr></div>
+  </div> <!-- End Invoice Header -->
+  <div class="invoice-detail-wrapper">
+    <div class="invoice-column-titles">
+      <div class="invoice-item-number">#</div>
+      <div class="invoice-item-price">Wholesale</div>
+      <div class="invoice-item-price">Retail</div>
+      <!-- <div class="invoice-item-tax">Tax</div> -->
+      <div class="invoice-item-description">Description</div>
+      <div class="invoice-item-price">Subtotal</div>
+    </div>
+    <div class="invoice-column-details " ng-repeat="product in products" ng-class-odd="'shaded'">
+      <div  class="invoice-item-number"><p>{{product.productIndex}}</p></div>
+      <div class="invoice-item-price"><p>${{product.wholesale}}</p></div>
+      <div class="invoice-item-price"><p>${{product.retail}}</p></div>
+      <!-- <div class="invoice-item-tax"><p>{{product.tax}}</p></div> -->
+      <div class="invoice-item-description"><p>{{product.description}}</p></div>
+      <div class="invoice-item-price"><p>${{product.subtotal}}</p></div>
+
+    </div> <!-- end invoice-column-details -->
+  </div> <!-- end invoice-detail-wrapper -->
+  <div class="invoice-footer">
+    <div class="invoice-total">
+    <h5>Invoice Total: <span class="red-text">${{invoiceTotal}}</span></h5>
+    </div>
   </div>
-
-
-<table class="customerContainer shadow-effect container soft-border">
-  <tr>
-    <th>#</th>
-    <th>Wholesale</th>
-    <th>Retail</th>
-    <th>Tax</th>
-    <th>Description</th>
-    <th>Subtotal</th>
-
-  </tr>
-  <tr ng-repeat="product in products">
-    <th>{{index}}</th>
-    <th>{{product.wholesale}}</th>
-    <th>{{product.retail}}</th>
-    <th>{{product.tax}}</th>
-    <th>{{product.description}}</th>
-    <th>{{productSubtotal}}</th>
-
-  </tr>
-</table>
+</div> <!-- End invoice-detail-container -->
 
 
 <!-- Add Product!!!!!! -->
 
-<div ng-show="showAddProductField" class="add-customer-info shadow-effect input-field container soft-border">
+<div ng-show="showAddProductField" class="add-customer-info shadow-effect input-field soft-border">
   <div class="row">
     <div class="col s12 center-align">
       <h5>Add Product</h5>

@@ -61,8 +61,14 @@ body {
 a {
   text-decoration: none; }
 
+::-webkit-scrollbar {
+  display: none; }
+
 .shaded {
   background-color: rgba(36, 49, 64, 0.3); }
+
+.round-corners {
+  border-radius: 0.1875em; }
 
 .shadow-effect {
   box-shadow: -1px 2px 6px #273646; }
@@ -108,7 +114,9 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  margin-top: 3%; }
+  margin-top: 3%;
+  padding-left: 3%;
+  padding-right: 3%; }
 
 .round-button {
   height: 2.3125em;
@@ -119,8 +127,7 @@ a {
   padding-left: 0.25em; }
 
 .add-project-round-button {
-  position: relative;
-  right: -28%; }
+  position: relative; }
 
 .add-project-title {
   color: black; }
@@ -267,15 +274,20 @@ a {
   background-color: #E9EEEF; }
 
 .project-name-top {
-  text-align: center; }
+  text-align: center;
+  padding-top: 2%; }
   .project-name-top h4 {
     margin: 0px; }
 
 .project-start-date-top {
   text-align: center; }
+  .project-start-date-top h6 {
+    color: #229C8F; }
 
 .project-deadline-top {
   text-align: center; }
+  .project-deadline-top h6 {
+    color: #E44235; }
 
 .project-content {
   height: 100%;
@@ -324,8 +336,8 @@ hr {
 .small-red-image-delete {
   height: 1.0625em;
   width: 1.0625em;
-  margin-left: 0.125em;
-  margin-top: 0.125em; }
+  margin-left: 0.1em;
+  margin-top: 0.1em; }
 
 .add-customer-info {
   width: 100%;
@@ -379,14 +391,13 @@ hr {
   justify-content: center; }
 
 .invoice-period-description {
-  align-self: center;
-  margin-left: 11%; }
+  width: 25vh; }
 
 .invoice-period {
   display: flex;
   justify-content: space-around;
   margin-bottom: 5%;
-  margin-top: 10%; }
+  margin-top: 5%; }
 
 .invoice-period-text {
   font-size: 1.25em;
@@ -426,6 +437,7 @@ hr {
   background-color: #E9EEEF;
   max-height: 75%;
   margin-top: 2%;
+  margin-bottom: 2%;
   overflow: scroll;
   width: 100%;
   display: flex;

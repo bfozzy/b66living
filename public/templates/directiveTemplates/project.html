@@ -6,12 +6,12 @@
     <div class="project-name-top">
     <h4>  {{project.project_name}}</h4>
     </div>
-    <div class="project-start-date-top col s6">
+    <div class="project-start-date-top col s12">
       <h6>Start Date: {{project.project_start_date}}</h6>
     </div>
-    <div class="project-deadline-top col s6">
+    <!-- <div class="project-deadline-top col s6">
       <h6>Deadline: {{project.project_deadline}}</h6>
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -71,8 +71,8 @@
       <div class="invoices-section-title">
         <h4>Invoices</h4>
       </div>
-        <div ng-repeat="invoice in invoices"class="invoice-container darker-shadow-effect soft-border">
-          <a ui-sref="seeInvoice({id: projectId, invoiceId: invoice.invoice_id})">
+      <div ng-repeat="invoice in invoices"class="invoice-container round-corners darker-shadow-effect soft-border">
+        <a ui-sref="seeInvoice({id: projectId, invoiceId: invoice.invoice_id})">
           <div class="invoice-delete-container "ng-click="deleteInvoice(invoice.invoice_id)">
             <div class="small-delete-button shadow-effect waves-effect waves-light">
               <div class="small-red-image-delete">
@@ -91,7 +91,7 @@
                 <div class="invoice-description-text">{{invoice.invoice_description}}</div>
               </div>
           </div>
-          </a>
-        </div>
+        </a>
+      </div>
     </div>
     <add-invoice></add-invoice>

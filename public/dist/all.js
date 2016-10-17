@@ -197,9 +197,9 @@ angular.module("b66Living").directive("navBar", function () {
 
     restrict: "AE",
     link: function link(scope, element, attributes) {},
-    controller: function controller($scope, mainService, $stateParams) {
+    controller: function controller($scope, mainService, $stateParams, $state) {
       $scope.projectState = $stateParams.id;
-
+      console.log($state);
       if ($scope.projectState) {
         mainService.getProject($stateParams.id).then(function (res) {
 

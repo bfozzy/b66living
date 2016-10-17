@@ -38,13 +38,16 @@ background-color: #6F777F;//$lightColor;
 a{
   text-decoration: none;
 }
+::-webkit-scrollbar {
+display: none;
+}
 .shaded{
   background-color:rgba(36, 49, 64, 0.3);
 
 }
 
-.soft-border{
-  // border-radius: $softBorder;
+.round-corners{
+  border-radius: $softBorder;
 }
 .shadow-effect{
   box-shadow: -1px 2px 6px $darkColor;
@@ -95,7 +98,8 @@ a{
   align-items: center;
   flex-direction: row;
   margin-top: 3%;
-  // margin-left: 1.1875em;//19px;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 .round-button{
@@ -111,7 +115,7 @@ a{
   // margin-top: -1.5em;//-24px;
   // align-self: flex-end;
   position: relative;
-  right: -28%;
+  // right: -28%;
 }
 .add-project-title{
   color: black;
@@ -323,16 +327,22 @@ background-color: $lightColor;
 }
 .project-name-top{
   text-align: center;
+  padding-top: 2%;
   h4{
     margin: 0px;
   }
 }
 .project-start-date-top{
   text-align: center;
+  h6{
+    color: $mainAccentColor;
+  }
 }
 .project-deadline-top{
   text-align: center;
-
+  h6{
+  color: $importantAccentColor;
+  }
 }
 .project-content{
   height: 100%;//41.6875em;//667px;
@@ -387,8 +397,8 @@ width: 1.875em;//30px;
 .small-red-image-delete{
   height: 1.0625em;//17px;
   width: 1.0625em;//17px;
-  margin-left: 0.125em;//2px;
-  margin-top: 0.125em;//2px;
+  margin-left: 0.1em;//2px;
+  margin-top: 0.1em;//2px;
 }
 
 // Add Customer!!!!
@@ -420,7 +430,7 @@ width: 1.875em;//30px;
   background-color: $darkColor;
   padding-top: 0.1875em;//3px;
   padding-left: 0.25em;//4px;
-  
+
 }
 .add-button-box-title{
   // position: relative;
@@ -462,14 +472,15 @@ width: 1.875em;//30px;
   justify-content: center;
 }
 .invoice-period-description{
-  align-self: center;
-    margin-left: 11%;
+  // align-self: center;
+    // margin-left: 11%;
+        width: 25vh;
 }
 .invoice-period{
   display: flex;
   justify-content: space-around;
   margin-bottom: 5%;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .invoice-period-text{
   font-size: 1.25em;//20px;
@@ -517,6 +528,7 @@ text-align: center;
   background-color: $lightColor;
   max-height: 75%;//400px;
   margin-top: 2%;
+  margin-bottom: 2%;
   overflow: scroll;
   width: $containerWidth;
   display: flex;

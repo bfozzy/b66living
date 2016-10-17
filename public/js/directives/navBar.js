@@ -9,9 +9,9 @@ angular.module("b66Living")
 
 
         },
-        controller: function($scope, mainService, $stateParams){
+        controller: function($scope, mainService, $stateParams, $state){
           $scope.projectState = $stateParams.id;
-
+          console.log($state);
              if ($scope.projectState){
                mainService.getProject($stateParams.id).then(function(res){
 

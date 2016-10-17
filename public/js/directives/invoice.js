@@ -15,7 +15,7 @@ angular.module("b66Living")
             var productLength = $scope.products.length;
             $scope.productIndex = [];
             $scope.invoiceTotal = 0;
-console.log($scope.products);
+            console.log($scope.products);
             for (var i = 0; i < productLength; i++) {
               var retail = Number($scope.products[i].retail);
               var tax = Number($scope.products[i].tax) * retail;
@@ -29,10 +29,15 @@ console.log($scope.products);
               $scope.products[i].productIndex=(i + 1);
               $scope.products[i].subtotal =subtot.toFixed(2);
               $scope.invoiceTotal += Number($scope.products[i].subtotal);
-              console.log($scope.invoiceTotal);
+              // console.log($scope.invoiceTotal);
               // $scope.productSubtotal = subtot;
             }
-            console.log($scope.products);
+            mainService.getInvoice($stateParams.id, $stateParams.invoiceId).then(function(res){
+              console.log(res.data);
+              $scope.invoicePeriodInfo = res.data[0].period;
+            });
+
+            // console.log($scope.products);
 
           });
 

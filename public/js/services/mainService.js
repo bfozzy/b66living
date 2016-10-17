@@ -24,6 +24,9 @@ angular.module("b66Living")
     this.getInvoices = function(id){
       return $http.get("admin/project/"+id+"/invoices");
     };
+    this.getInvoice = function(id,invoiceId){
+      return $http.get("admin/project/"+id+"/invoice/"+invoiceId);
+    }
     this.getCustomers = function(id){
       return $http.get("admin/project/"+id+"/customers");
     };

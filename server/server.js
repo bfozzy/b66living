@@ -27,6 +27,7 @@ app.get("/admin/project/:id", projectCtrl.getProject);
 app.get("/admin/project/:id/invoices", projectCtrl.getInvoices);
 app.get("/admin/project/:id/customers", projectCtrl.getCustomers);
 app.get("/admin/project/:id/invoice/:invoiceId/products", projectCtrl.getProducts);
+app.get("/admin/project/:id/invoice/:invoiceId", projectCtrl.getInvoice);
 
 //Delete Endpoints!!!
 app.delete("/admin/project/customer/:customerId", projectCtrl.deleteCustomer);

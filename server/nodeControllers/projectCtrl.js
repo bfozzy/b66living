@@ -84,7 +84,17 @@ createNewProduct: function(req, res){
 
     });
   },
+  getInvoice: function(req,res) {
+    db.get_invoice([req.params.invoiceId], function(err, invoice){
+      if(err){
+        res.status(400).json(err);
+      }
+      else{
+        res.status(200).json(invoice);
+      }
 
+    });
+  },
   getCustomers: function(req,res) {
     db.get_customers([req.params.id], function(err, customers){
       if(err){

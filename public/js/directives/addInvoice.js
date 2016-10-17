@@ -16,7 +16,7 @@ angular.module("b66Living")
             };
             mainService.createInvoice(invoice, $stateParams.id).then(function(res){
               if(res.status === 200){
-                alert("Invoice Added")
+                swal("Invoice Added");
                 $state.reload();
               }
               else {

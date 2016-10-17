@@ -42,6 +42,58 @@ angular.module("b66Living").controller("testCtrl", function ($scope, $state) {
   };
 });
 
+angular.module("b66Living").service("mainService", function ($http) {
+  //POST Endpoints!
+  this.createProj = function (newProjectData) {
+    return $http.post("admin/project/new", newProjectData);
+  };
+  this.createCust = function (customer, id) {
+    return $http.post("admin/project/" + id + "/customer/new", customer);
+  };
+  this.createInvoice = function (invoice, id) {
+    return $http.post("admin/project/" + id + "/invoice/new", invoice);
+  };
+  this.addProduct = function (invoiceId, newProduct) {
+    // console.log(newProduct, invoiceId);
+    return $http.post("admin/project/invoice/" + invoiceId, newProduct);
+  };
+  //GET Endpoints!
+  this.showProjects = function () {
+    return $http.get("admin/projects");
+  };
+  this.getProject = function (id) {
+    return $http.get("admin/project/" + id);
+  };
+  this.getInvoices = function (id) {
+    return $http.get("admin/project/" + id + "/invoices");
+  };
+  this.getInvoice = function (id, invoiceId) {
+    return $http.get("admin/project/" + id + "/invoice/" + invoiceId);
+  };
+  this.getCustomers = function (id) {
+    return $http.get("admin/project/" + id + "/customers");
+  };
+  this.getProducts = function (id, invoiceId) {
+    return $http.get("admin/project/" + id + "/invoice/" + invoiceId + "/products");
+  };
+  //DELETE Endpoints!
+  this.deleteCustomer = function (customerId) {
+    return $http.delete("admin/project/customer/" + customerId);
+  };
+  this.deleteCustomers = function (id) {
+    return $http.delete("admin/project/" + id + "/customers");
+  };
+  this.deleteInvoice = function (invoiceId) {
+    return $http.delete("admin/project/invoice/" + invoiceId);
+  };
+  this.deleteInvoices = function (id) {
+    return $http.delete("admin/project/" + id + "/invoices");
+  };
+  this.deleteProject = function (id) {
+    return $http.delete("admin/project/" + id);
+  };
+});
+
 angular.module("b66Living").directive("addCustomer", function () {
   return {
 
@@ -95,7 +147,7 @@ angular.module("b66Living").directive("addInvoice", function () {
         };
         mainService.createInvoice(invoice, $stateParams.id).then(function (res) {
           if (res.status === 200) {
-            alert("Invoice Added");
+            swal("Invoice Added");
             $state.reload();
           } else {
             alert("There was a problem processing your request");
@@ -166,10 +218,15 @@ angular.module("b66Living").directive("invoice", function () {
           $scope.products[i].productIndex = i + 1;
           $scope.products[i].subtotal = subtot.toFixed(2);
           $scope.invoiceTotal += Number($scope.products[i].subtotal);
-          console.log($scope.invoiceTotal);
+          // console.log($scope.invoiceTotal);
           // $scope.productSubtotal = subtot;
         }
-        console.log($scope.products);
+        mainService.getInvoice($stateParams.id, $stateParams.invoiceId).then(function (res) {
+          console.log(res.data);
+          $scope.invoicePeriodInfo = res.data[0].period;
+        });
+
+        // console.log($scope.products);
       });
 
       $scope.addProduct = function (productDescription, productWholesale, productRetail, productTax) {
@@ -318,54 +375,5 @@ angular.module("b66Living").directive("projectSummaries", function () {
         });
       };
     }
-  };
-});
-
-angular.module("b66Living").service("mainService", function ($http) {
-  //POST Endpoints!
-  this.createProj = function (newProjectData) {
-    return $http.post("admin/project/new", newProjectData);
-  };
-  this.createCust = function (customer, id) {
-    return $http.post("admin/project/" + id + "/customer/new", customer);
-  };
-  this.createInvoice = function (invoice, id) {
-    return $http.post("admin/project/" + id + "/invoice/new", invoice);
-  };
-  this.addProduct = function (invoiceId, newProduct) {
-    // console.log(newProduct, invoiceId);
-    return $http.post("admin/project/invoice/" + invoiceId, newProduct);
-  };
-  //GET Endpoints!
-  this.showProjects = function () {
-    return $http.get("admin/projects");
-  };
-  this.getProject = function (id) {
-    return $http.get("admin/project/" + id);
-  };
-  this.getInvoices = function (id) {
-    return $http.get("admin/project/" + id + "/invoices");
-  };
-  this.getCustomers = function (id) {
-    return $http.get("admin/project/" + id + "/customers");
-  };
-  this.getProducts = function (id, invoiceId) {
-    return $http.get("admin/project/" + id + "/invoice/" + invoiceId + "/products");
-  };
-  //DELETE Endpoints!
-  this.deleteCustomer = function (customerId) {
-    return $http.delete("admin/project/customer/" + customerId);
-  };
-  this.deleteCustomers = function (id) {
-    return $http.delete("admin/project/" + id + "/customers");
-  };
-  this.deleteInvoice = function (invoiceId) {
-    return $http.delete("admin/project/invoice/" + invoiceId);
-  };
-  this.deleteInvoices = function (id) {
-    return $http.delete("admin/project/" + id + "/invoices");
-  };
-  this.deleteProject = function (id) {
-    return $http.delete("admin/project/" + id);
   };
 });

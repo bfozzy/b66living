@@ -2,7 +2,7 @@ var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var massive = require("massive");
-var serverConfig = require("./server_config.js");
+var serverConfig = require("./serverconfig.js");
 var connectionString = serverConfig.connectionString;
 var app = module.exports = express();
 var massiveInstance = massive.connectSync({connectionString : connectionString});

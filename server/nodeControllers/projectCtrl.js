@@ -37,17 +37,18 @@ createNewInvoice: function(req, res){
 },
 createNewProduct: function(req, res){
   db.create_new_product([req.params.invoiceId, req.body.description, req.body.wholesale,req.body.retail, req.body.tax], function(err){
+    console.log("invoiceId",req.params.invoiceId);
+    console.log("description",req.body.description);
+    console.log("wholesale",req.body.wholesale);
+    console.log("retail",req.body.retail);
+    console.log("tax",req.body.tax);
     if(err){
       res.status(400).json(err);
     }
     else {
       res.status(200).json("Product Added");
     }
-    // console.log(req.params.invoiceId);
-    // console.log(req.body.description);
-    // console.log(req.body.wholesale);
-    // console.log(req.body.retail);
-    // console.log(req.body.tax);
+
   });
 },
   //GET Functions
@@ -74,12 +75,16 @@ createNewProduct: function(req, res){
 
   },
   getInvoices: function(req,res) {
+    console.log(req.params.id);
     db.get_invoices([req.params.id], function(err, invoices){
       if(err){
         res.status(400).json(err);
+        console.log("err:",invoices);
       }
       else{
         res.status(200).json(invoices);
+        console.log("200:",invoices);
+
       }
 
     });

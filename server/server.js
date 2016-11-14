@@ -2,15 +2,16 @@ var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var massive = require("massive");
-var connectionString = "postgres://postgres:@localhost/b66living";
+var serverConfig = require("./server_config.js");
+var connectionString = serverConfig.connectionString;
 var app = module.exports = express();
 var massiveInstance = massive.connectSync({connectionString : connectionString});
-var serverConfig = require("./server_config.js");
+
 
 app.set("db", massiveInstance);
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static("../public"));
+app.use(express.static("public"));
 
 //Controllers!
 var projectCtrl = require("./nodeControllers/projectCtrl.js");

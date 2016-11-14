@@ -71,13 +71,13 @@ a {
   border-radius: 0.1875em; }
 
 .shadow-effect {
-  box-shadow: -1px 2px 6px #273646; }
+  box-shadow: -1px 2px 6px #0064A5; }
 
 .input-field label {
   color: black; }
 
 .input-field input[type=text]:focus + label {
-  color: #229C8F; }
+  color: #FFFFFF; }
 
 /* label color */
 .input-field label {
@@ -109,7 +109,7 @@ a {
 .add-button-box {
   width: 100%;
   height: 4.6875em;
-  background-color: #E9EEEF;
+  background-color: #E2E4E6;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -122,7 +122,7 @@ a {
   height: 2.3125em;
   width: 2.3125em;
   border-radius: 2.3125em;
-  background-color: #273646;
+  background-color: #0064A5;
   padding-top: 0.1875em;
   padding-left: 0.25em; }
 
@@ -136,7 +136,7 @@ a {
   display: flex; }
 
 .main-header {
-  background-color: #273646;
+  background-color: #0064A5;
   height: 5.625em;
   width: 100%;
   display: flex;
@@ -146,18 +146,18 @@ a {
 .b66 {
   font-family: "Oxygen", sans-serif;
   font-size: 1.5em;
-  color: #E9EEEF; }
+  color: #E2E4E6; }
 
 .living {
   font-family: "Courgette", cursive;
   font-size: 1.5em;
-  color: #E9EEEF; }
+  color: #E2E4E6; }
 
 .companyLogo {
   width: 4.6875em;
   height: 4.6875em;
   border-radius: 6.25em;
-  background-color: #229C8F;
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,7 +169,7 @@ a {
   width: 9.8125em;
   height: 100%;
   z-index: 2;
-  background-color: #E9EEEF;
+  background-color: #E2E4E6;
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -207,7 +207,7 @@ a {
 .add-project-box {
   width: 100%;
   height: 100%;
-  background-color: #E9EEEF; }
+  background-color: #E2E4E6; }
 
 .add-project-title {
   color: black; }
@@ -219,7 +219,7 @@ a {
 .project-box {
   width: 100%;
   height: 4.6875em;
-  background-color: #E9EEEF; }
+  background-color: #E2E4E6; }
 
 .project-button {
   width: 100%;
@@ -240,7 +240,7 @@ a {
   display: inline-block; }
 
 .start-date {
-  color: #229C8F;
+  color: #FFFFFF;
   font-size: 1em;
   position: relative;
   top: 0em;
@@ -256,7 +256,7 @@ a {
 .projectSummaries {
   width: 6.25em;
   height: 6.25em;
-  background-color: #E9EEEF; }
+  background-color: #E2E4E6; }
 
 .project-delete-container {
   position: relative;
@@ -265,13 +265,13 @@ a {
 .project-name-and-dates {
   width: 100%;
   height: 17vh;
-  background-color: #273646;
+  background-color: #0064A5;
   padding-top: 2.5vh; }
 
 .project-name-and-dates-content {
   height: 12vh;
   width: inherit;
-  background-color: #E9EEEF; }
+  background-color: #E2E4E6; }
 
 .project-name-top {
   text-align: center;
@@ -282,7 +282,7 @@ a {
 .project-start-date-top {
   text-align: center; }
   .project-start-date-top h6 {
-    color: #229C8F; }
+    color: #FFFFFF; }
 
 .project-deadline-top {
   text-align: center; }
@@ -295,13 +295,13 @@ a {
 
 .customerContainer {
   width: 100%;
-  background-color: #E9EEEF;
+  background-color: #E2E4E6;
   height: 12.0em;
   padding: 0.625em;
   margin-top: 2%; }
 
 hr {
-  color: #273646; }
+  color: #0064A5; }
 
 .editButton {
   margin-right: 0.3125em; }
@@ -313,7 +313,7 @@ hr {
   height: 2.3125em;
   width: 2.3125em;
   border-radius: 2.3125em;
-  background-color: #273646;
+  background-color: #0064A5;
   padding-top: 0.1875em;
   padding-left: 0.25em;
   margin-right: 0.3125em; }
@@ -329,7 +329,7 @@ hr {
   height: 1.4375em;
   width: 1.4375em;
   border-radius: 17px;
-  background-color: #273646;
+  background-color: #0064A5;
   align-self: flex-end;
   margin: 5px; }
 
@@ -342,11 +342,11 @@ hr {
 .add-customer-info {
   width: 100%;
   height: 13.5em;
-  background-color: #E9EEEF;
+  background-color: #E2E4E6;
   margin-top: 3%; }
 
 .add-customer-address {
-  background-color: #E9EEEF; }
+  background-color: #E2E4E6; }
 
 .red-image-add {
   height: 3.0625em;
@@ -359,12 +359,12 @@ hr {
   height: 2.3125em;
   width: 2.3125em;
   border-radius: 2.3125em;
-  background-color: #273646;
+  background-color: #0064A5;
   padding-top: 0.1875em;
   padding-left: 0.25em; }
 
 .invoice-container-wrapper {
-  background-color: #273646;
+  background-color: #0064A5;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -376,7 +376,7 @@ hr {
 .invoice-container {
   min-width: 45%;
   height: 8em;
-  background-color: #E9EEEF;
+  background-color: #E2E4E6;
   margin-top: .625em;
   display: flex;
   justify-content: flex-start;
@@ -407,7 +407,7 @@ hr {
 
 .invoice-description-text {
   font-size: 1.25em;
-  color: #273646;
+  color: #0064A5;
   text-align: center; }
 
 .invoice-delete-container {
@@ -418,23 +418,23 @@ hr {
   height: 2.3125em;
   width: 2.3125em;
   border-radius: 2.3125em;
-  background-color: #273646; }
+  background-color: #0064A5; }
 
 .addInvoice {
   width: 100%;
   max-width: 100%;
   height: 12.5em;
-  background-color: #E9EEEF; }
+  background-color: #E2E4E6; }
 
 .invoice-detail-title {
-  background-color: #E9EEEF;
+  background-color: #E2E4E6;
   height: 75%;
   padding: 0.625em;
   width: 100%;
   text-align: center; }
 
 .invoice-detail-container {
-  background-color: #E9EEEF;
+  background-color: #E2E4E6;
   max-height: 75%;
   margin-top: 2%;
   margin-bottom: 2%;

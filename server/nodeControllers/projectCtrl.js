@@ -55,6 +55,7 @@ createNewProduct: function(req, res){
   getProjects: function(req, res){
     db.get_projects(function(err, projects){
       if(err){
+        console.log(err);
         res.status(400).json(err);
       }
       else {

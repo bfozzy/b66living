@@ -1,20 +1,23 @@
 var express = require("express");
-var cors = require("cors");
+var app = module.exports = express();
 var bodyParser = require("body-parser");
+var cors = require("cors");
 var massive = require("massive");
 var serverConfig = require("./serverconfig.js");
+
 var connectionString = serverConfig.connectionString;
-var app = module.exports = express();
 var massiveInstance = massive.connectSync({connectionString : connectionString});
 
+app.use(express.static(__dirname + "/../public"));
+app.use(bodyParser.json());
+app.use(cors());
 
 app.set("db", massiveInstance);
-app.use(cors());
-app.use(bodyParser.json());
-app.use(express.static("public"));
+var db = app.get('db');
+
+var projectCtrl = require("./nodeControllers/projectCtrl.js");
 
 //Controllers!
-var projectCtrl = require("./nodeControllers/projectCtrl.js");
 
 // POST Endpoints!
 app.post("/admin/project/new", projectCtrl.createNewProject);

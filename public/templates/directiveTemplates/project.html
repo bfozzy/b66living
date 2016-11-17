@@ -72,7 +72,7 @@
         <h4>Invoices</h4>
       </div>
       <div ng-repeat="invoice in invoices"class="invoice-container round-corners darker-shadow-effect soft-border">
-        <a ui-sref="seeInvoice({id: projectId, invoiceId: invoice.invoice_id})">
+
           <div class="invoice-delete-container "ng-click="deleteInvoice(invoice.invoice_id)">
             <div class="small-delete-button shadow-effect waves-effect waves-light">
               <div class="small-red-image-delete">
@@ -80,6 +80,7 @@
               </div>
             </div>
           </div>
+            <a ui-sref="seeInvoice({id: projectId, invoiceId: invoice.invoice_id})">
           <div class="invoice-period-description">
               <div class="invoice-period">
                 <div class="invoice-period-text">

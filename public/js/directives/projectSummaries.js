@@ -11,7 +11,6 @@ angular.module("b66Living")
         controller: function($scope, mainService, $state){
             mainService.showProjects()
             .then(function(res){
-              console.log(res.data);
               $scope.projects = res.data;
             });
 

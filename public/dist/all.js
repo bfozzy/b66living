@@ -152,7 +152,6 @@ angular.module("b66Living").directive("invoice", function () {
         var productLength = $scope.products.length;
         $scope.productIndex = [];
         $scope.invoiceTotal = 0;
-        console.log($scope.products);
         for (var i = 0; i < productLength; i++) {
           var retail = Number($scope.products[i].retail);
           var tax = Number($scope.products[i].tax) * retail;
@@ -170,7 +169,6 @@ angular.module("b66Living").directive("invoice", function () {
           // $scope.productSubtotal = subtot;
         }
         mainService.getInvoice($stateParams.id, $stateParams.invoiceId).then(function (res) {
-          console.log(res.data);
           $scope.invoicePeriodInfo = res.data[0].period;
         });
 
@@ -204,7 +202,7 @@ angular.module("b66Living").directive("navBar", function () {
     link: function link(scope, element, attributes) {},
     controller: function controller($scope, mainService, $stateParams, $state) {
       $scope.projectState = $stateParams.id;
-      console.log($state);
+
       if ($scope.projectState) {
         mainService.getProject($stateParams.id).then(function (res) {
 
@@ -292,7 +290,6 @@ angular.module("b66Living").directive("projectSummaries", function () {
     link: function link(scope, element, attributes) {},
     controller: function controller($scope, mainService, $state) {
       mainService.showProjects().then(function (res) {
-        console.log(res.data);
         $scope.projects = res.data;
       });
 

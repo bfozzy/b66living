@@ -15,7 +15,6 @@ angular.module("b66Living")
             var productLength = $scope.products.length;
             $scope.productIndex = [];
             $scope.invoiceTotal = 0;
-            console.log($scope.products);
             for (var i = 0; i < productLength; i++) {
               var retail = Number($scope.products[i].retail);
               var tax = Number($scope.products[i].tax) * retail;
@@ -33,7 +32,6 @@ angular.module("b66Living")
               // $scope.productSubtotal = subtot;
             }
             mainService.getInvoice($stateParams.id, $stateParams.invoiceId).then(function(res){
-              console.log(res.data);
               $scope.invoicePeriodInfo = res.data[0].period;
             });
 
